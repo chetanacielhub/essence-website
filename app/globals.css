@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-primary: #071A36;
+  --color-navy-deep: #041126;
+  --color-navy-royal: #102D5C;
+  --color-navy-surface: #0B2246;
+  --color-navy-card: #0A1E3D;
+  --color-navy-border: #18335D;
+  --color-gold-metallic: #D4AF5A;
+  --color-gold-light: #F0D99A;
+  --color-gold-muted: #B8923F;
+  --color-warm-ivory: #F7F4EC;
+  --color-body-dark: #29354A;
+  --color-muted-slate: #68758A;
+}
+
+:root {
+  --background: #041126;
+  --foreground: #F7F4EC;
+  --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-accent: var(--font-cormorant), Georgia, serif;
+}
+
+body {
+  background-color: #041126;
+  color: #F7F4EC;
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-accent {
+  font-family: var(--font-accent);
+}
+
+/* Background Atmosphere */
+.bg-ambient-navy {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(16, 45, 92, 0.75), transparent 55%),
+    radial-gradient(ellipse at 50% 100%, rgba(212, 175, 90, 0.08), transparent 45%),
+    #041126;
+}
+
+.bg-ambient-hero {
+  background:
+    radial-gradient(circle at 50% 10%, rgba(16, 45, 92, 0.85) 0%, transparent 60%),
+    radial-gradient(circle at 85% 30%, rgba(212, 175, 90, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 15% 70%, rgba(11, 34, 70, 0.6) 0%, transparent 50%),
+    #041126;
+}
+
+/* Gold Accent Lines & Dividers */
+.gold-separator {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #D4AF5A, transparent);
+}
+
+.gold-separator-left {
+  height: 2px;
+  background: linear-gradient(90deg, #D4AF5A, transparent);
+}
+
+/* Royal Cards */
+.royal-card {
+  background: rgba(10, 30, 61, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 90, 0.18);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.royal-card:hover {
+  border-color: rgba(212, 175, 90, 0.45);
+  box-shadow: 0 12px 32px -8px rgba(7, 26, 54, 0.65), 0 0 20px -2px rgba(212, 175, 90, 0.12);
+  transform: translateY(-2px);
+}
+
+.royal-card-static {
+  background: rgba(10, 30, 61, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 175, 90, 0.15);
+}
+
+/* Metallic Gold Gradients */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #F0D99A 0%, #D4AF5A 50%, #B8923F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-gold {
+  background: linear-gradient(135deg, #D4AF5A 0%, #B8923F 100%);
+}
+
+.bg-gradient-navy {
+  background: linear-gradient(180deg, #071A36 0%, #041126 100%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #041126;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #18335D;
+  border-radius: 4px;
+  border: 2px solid #041126;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF5A;
+}
+
+/* Accessibility Focus Ring */
+:focus-visible {
+  outline: 2px solid #D4AF5A;
+  outline-offset: 2px;
+}
