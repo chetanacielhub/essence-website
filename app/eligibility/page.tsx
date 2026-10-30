@@ -1,12 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { CheckCircle2, XCircle, Users, ArrowRight, ShieldCheck } from 'lucide-react';
+import { CheckCircle2, Users, ArrowRight, ShieldCheck, Sparkles, Building, Calendar, Award } from 'lucide-react';
+import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
-  title: 'Eligibility Criteria & Team Guidelines',
+  title: 'Who Can Join · ESSENCE',
   description:
-    'Detailed eligibility rules for ESSENCE 2027: undergraduate status, institutional qualification across Maharashtra, and team composition limits.',
+    'Fewer rules. More founders. Open to all students and aspiring founders from any institution. Team of 2–4 members.',
 };
 
 export default function EligibilityPage() {
@@ -17,138 +18,111 @@ export default function EligibilityPage() {
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#102D5C]/60 border border-[#D4AF5A]/30 text-[#D4AF5A] text-xs font-bold uppercase tracking-[0.2em]">
             <ShieldCheck className="w-3.5 h-3.5" />
-            <span>Participation Standards</span>
+            <span>PAGE 6 · WHO CAN JOIN?</span>
           </div>
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight">
-            Who Can <span className="text-[#D4AF5A]">Participate</span>
+            Who Can <span className="text-[#D4AF5A]">Join?</span>
           </h1>
+          <div className="text-xl sm:text-2xl font-serif text-gradient-gold italic">
+            {siteConfig.whoCanJoin.tagline}
+          </div>
           <p className="text-sm sm:text-base text-[#C4CFDD] leading-relaxed">
-            ESSENCE 2027 is structured exclusively to empower undergraduate students across
-            Maharashtra’s educational ecosystem. Review the official eligibility guidelines below.
+            ESSENCE is built to support the next generation of student founders and innovators without unnecessary barriers.
           </p>
         </div>
 
-        {/* Eligibility Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* Eligible Section */}
-          <div className="royal-card p-8 rounded-2xl border-emerald-500/30 space-y-6">
-            <div className="flex items-center gap-3 pb-3 border-b border-[#18335D]">
-              <div className="w-10 h-10 rounded-full bg-emerald-950/60 border border-emerald-500/40 text-emerald-400 flex items-center justify-center">
-                <CheckCircle2 className="w-5 h-5" />
-              </div>
-              <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400">
-                  Approved Criteria
-                </span>
-                <h2 className="font-serif text-xl font-medium text-[#F7F4EC]">
-                  Eligible to Register
+        {/* 4 Pillars of Who Can Join (PAGE 6) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {siteConfig.whoCanJoin.points.map((point, idx) => (
+            <div
+              key={idx}
+              className="royal-card p-8 rounded-2xl flex flex-col justify-between hover:border-[#D4AF5A]/50 transition-all space-y-4 group"
+            >
+              <div className="space-y-3">
+                <div className="w-12 h-12 rounded-xl bg-[#102D5C] text-[#D4AF5A] flex items-center justify-center group-hover:bg-[#D4AF5A] group-hover:text-[#041126] transition-colors">
+                  <CheckCircle2 className="w-6 h-6" />
+                </div>
+                <h2 className="font-serif text-2xl font-bold text-[#F7F4EC]">
+                  {point.title}
                 </h2>
+                <p className="text-xs sm:text-sm text-[#C4CFDD] leading-relaxed">
+                  {point.description}
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-[#18335D]/70 text-[10px] text-[#D4AF5A] font-bold uppercase tracking-wider">
+                Founder Rule 0{idx + 1}
               </div>
             </div>
+          ))}
+        </div>
 
-            <ul className="space-y-4 text-xs sm:text-sm text-[#C4CFDD]">
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <span>
-                  <strong>Bona Fide Undergraduates:</strong> Currently enrolled in any accredited undergraduate degree, diploma, or polytechnic programme in Maharashtra.
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <span>
-                  <strong>All Academic Disciplines:</strong> Engineering, technology, arts, commerce, sciences, management, pharmacy, architecture, and vocational studies.
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <span>
-                  <strong>Individual or Team Participation:</strong> Register as a solo innovator or form an interdisciplinary team of 2 to 4 members.
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <span>
-                  <strong>Cross-Institutional Collaboration:</strong> Teammates may belong to different colleges within Maharashtra (the team leader’s institution is designated primary).
-                </span>
-              </li>
-            </ul>
+        {/* Summary Table: Registration Particulars */}
+        <div className="royal-card p-8 sm:p-10 rounded-2xl border-[#D4AF5A]/30 max-w-4xl mx-auto space-y-6 bg-gradient-to-br from-[#0B2246] via-[#071A36] to-[#041126]">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-[#18335D] gap-2">
+            <div>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-[#D4AF5A]">
+                PAGE 5 · REGISTRATION DETAILS
+              </span>
+              <h3 className="font-serif text-2xl font-bold text-[#F7F4EC]">
+                Your Journey Starts Here
+              </h3>
+            </div>
+            <div className="font-serif text-lg text-gradient-gold italic">
+              GRAND FUND POOL: {siteConfig.grandFundPool}
+            </div>
           </div>
 
-          {/* Ineligible Section */}
-          <div className="royal-card p-8 rounded-2xl border-rose-500/30 space-y-6">
-            <div className="flex items-center gap-3 pb-3 border-b border-[#18335D]">
-              <div className="w-10 h-10 rounded-full bg-rose-950/60 border border-rose-500/40 text-rose-400 flex items-center justify-center">
-                <XCircle className="w-5 h-5" />
-              </div>
-              <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-rose-400">
-                  Restricted Categories
-                </span>
-                <h2 className="font-serif text-xl font-medium text-[#F7F4EC]">
-                  Not Eligible for Awards
-                </h2>
-              </div>
-            </div>
-
-            <ul className="space-y-4 text-xs sm:text-sm text-[#C4CFDD]">
-              <li className="flex items-start gap-3">
-                <XCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
-                <span>
-                  <strong>Post-Graduate &amp; Doctoral Students:</strong> Masters, MBA, M.Tech, and PhD scholars cannot participate as competing team members.
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <XCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
-                <span>
-                  <strong>Commercial Startups:</strong> Incorporated entities with external venture capital funding prior to competition registration.
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <XCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
-                <span>
-                  <strong>Alumni &amp; Working Professionals:</strong> Graduated alumni cannot submit entries (faculty and alumni may serve as mentors).
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <XCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
-                <span>
-                  <strong>Out-of-State Institutions:</strong> Submissions where all team members are enrolled in colleges located outside the state of Maharashtra.
-                </span>
-              </li>
-            </ul>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-xs sm:text-sm">
+              <thead>
+                <tr className="border-b border-[#18335D] text-[#D4AF5A] text-[11px] font-bold uppercase tracking-wider">
+                  <th className="py-3 px-4">Particulars</th>
+                  <th className="py-3 px-4">Details</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-[#18335D]/60 text-[#C4CFDD]">
+                <tr>
+                  <td className="py-3 px-4 font-semibold text-[#F7F4EC]">Team Size</td>
+                  <td className="py-3 px-4">{siteConfig.registrationDetails.teamSize}</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-4 font-semibold text-[#F7F4EC]">Registration Fee</td>
+                  <td className="py-3 px-4 font-bold text-[#D4AF5A]">{siteConfig.registrationDetails.registrationFee}</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-4 font-semibold text-[#F7F4EC]">Last Date</td>
+                  <td className="py-3 px-4">{siteConfig.registrationDetails.lastDate}</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-4 font-semibold text-[#F7F4EC]">Bootcamp</td>
+                  <td className="py-3 px-4">{siteConfig.registrationDetails.bootcampDate}</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-4 font-semibold text-[#F7F4EC]">Main Event</td>
+                  <td className="py-3 px-4">{siteConfig.registrationDetails.mainEventDate}</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-4 font-semibold text-[#F7F4EC]">Time</td>
+                  <td className="py-3 px-4">{siteConfig.registrationDetails.time}</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-4 font-semibold text-[#F7F4EC]">Venue</td>
+                  <td className="py-3 px-4">{siteConfig.registrationDetails.venue}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
-        {/* Team Rules Summary Box */}
-        <div className="royal-card-static p-8 rounded-2xl border-[#D4AF5A]/30 max-w-5xl mx-auto space-y-4">
-          <div className="flex items-center gap-2 text-[#D4AF5A]">
-            <Users className="w-5 h-5" />
-            <h3 className="font-serif text-xl font-medium text-[#F7F4EC]">
-              Team Formation Rules &amp; Limits
-            </h3>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-[#C4CFDD]">
-            <div className="p-4 rounded-lg bg-[#041126]/60 border border-[#18335D] space-y-1">
-              <strong className="text-[#F7F4EC] block">Team Size</strong>
-              <span>Minimum 1 (Solo) to Maximum 4 undergraduate members per team.</span>
-            </div>
-            <div className="p-4 rounded-lg bg-[#041126]/60 border border-[#18335D] space-y-1">
-              <strong className="text-[#F7F4EC] block">Single Membership</strong>
-              <span>A participant may not be registered in more than one competing team simultaneously.</span>
-            </div>
-            <div className="p-4 rounded-lg bg-[#041126]/60 border border-[#18335D] space-y-1">
-              <strong className="text-[#F7F4EC] block">Primary Team Leader</strong>
-              <span>The designated leader serves as the official recipient of notifications and award grants.</span>
-            </div>
-          </div>
-        </div>
-
+        {/* Action Button */}
         <div className="text-center pt-4">
           <Link
             href="/register"
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg text-xs sm:text-sm font-bold text-[#041126] bg-[#D4AF5A] hover:bg-[#F0D99A] transition-colors shadow"
           >
-            <span>Proceed to Registration Portal</span>
+            <Sparkles className="w-4 h-4" />
+            <span>Register Your Team Online (₹500)</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

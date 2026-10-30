@@ -5,6 +5,7 @@ import AboutSection from '@/components/home/AboutSection';
 import TracksSection from '@/components/home/TracksSection';
 import JourneySection from '@/components/home/JourneySection';
 import AwardsSection from '@/components/home/AwardsSection';
+import WhyParticipateSection from '@/components/home/WhyParticipateSection';
 import ShowcaseSection from '@/components/home/ShowcaseSection';
 import MentorshipModelSection from '@/components/home/MentorshipModelSection';
 import CollegesSection from '@/components/home/CollegesSection';
@@ -20,6 +21,7 @@ export default function HomePage() {
       <TracksSection />
       <JourneySection />
       <AwardsSection />
+      <WhyParticipateSection />
       <ShowcaseSection />
       <MentorshipModelSection />
       <CollegesSection />

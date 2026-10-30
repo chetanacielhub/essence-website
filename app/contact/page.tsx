@@ -2,8 +2,18 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Mail, Phone, MapPin, Send, CheckCircle2, MessageSquare, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, MessageSquare, Globe, Sparkles } from 'lucide-react';
 import { siteConfig } from '@/config/site';
+
+function InstagramIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+    </svg>
+  );
+}
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -32,239 +42,217 @@ export default function ContactPage() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#102D5C]/60 border border-[#D4AF5A]/30 text-[#D4AF5A] text-xs font-bold uppercase tracking-[0.2em]">
-            <Mail className="w-3.5 h-3.5" />
-            <span>Official Communications</span>
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>PAGE 8 · PARTNERSHIP &amp; CONTACT</span>
           </div>
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight">
-            Contact <span className="text-[#D4AF5A]">CiEL</span>
+            Your Spark. Our Stage.{' '}
+            <span className="text-gradient-gold italic">Endless Possibilities.</span>
           </h1>
           <p className="text-sm sm:text-base text-[#C4CFDD] leading-relaxed">
-            Get in touch with the organising committee at Chetana’s Centre for Innovation &amp;
-            Entrepreneurship Learning (CiEL) in Bandra (East), Mumbai.
+            Register your team with ESSENCE to back the next generation of founders.
           </p>
         </div>
 
-        {/* Contact Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 max-w-6xl mx-auto items-start">
-          {/* Institutional Address & Details */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="royal-card p-6 sm:p-8 rounded-2xl border-[#D4AF5A]/30 space-y-6">
+        {/* 2-Column Section: Let's Connect & Partner with ESSENCE */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto items-stretch">
+          {/* Let's Connect */}
+          <div className="lg:col-span-5 royal-card p-6 sm:p-8 rounded-2xl border-[#D4AF5A]/30 flex flex-col justify-between space-y-6 bg-gradient-to-br from-[#0B2246] via-[#071A36] to-[#041126]">
+            <div className="space-y-5">
               <div>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#D4AF5A]">
-                  Organising Secretariat
+                  Direct Contact
                 </span>
-                <h2 className="font-serif text-2xl font-medium text-[#F7F4EC] pt-1">
-                  Chetana’s CiEL
+                <h2 className="font-serif text-3xl font-bold text-[#F7F4EC] pt-1">
+                  Let&apos;s Connect
                 </h2>
-                <p className="text-xs text-[#68758A] pt-1">
-                  Centre for Innovation &amp; Entrepreneurship Learning
+                <p className="text-xs text-[#C4CFDD] pt-1">
+                  Connect with the ESSENCE leadership and organizing committee.
                 </p>
               </div>
 
-              <div className="space-y-4 text-xs sm:text-sm text-[#C4CFDD]">
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-4 h-4 text-[#D4AF5A] shrink-0 mt-1" />
-                  <div>
-                    <strong className="text-[#F7F4EC] block">Campus Address:</strong>
-                    <span className="text-xs text-[#C4CFDD] leading-relaxed">
-                      {siteConfig.institution.campus}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <Mail className="w-4 h-4 text-[#D4AF5A] shrink-0 mt-1" />
-                  <div>
-                    <strong className="text-[#F7F4EC] block">Competition Support Desk:</strong>
-                    <a
-                      href={`mailto:${siteConfig.institution.supportEmail}`}
-                      className="text-xs text-[#D4AF5A] hover:underline"
-                    >
-                      {siteConfig.institution.supportEmail}
-                    </a>
-                    <div className="text-[11px] text-[#68758A]">
-                      Institutional: {siteConfig.institution.email}
+              <div className="space-y-3 pt-2">
+                {siteConfig.institution.contacts.map((contact, i) => (
+                  <div
+                    key={i}
+                    className="p-4 rounded-xl bg-[#041126]/80 border border-[#18335D] flex items-center justify-between"
+                  >
+                    <div>
+                      <span className="text-[10px] uppercase font-bold text-[#68758A] block">
+                        Lead Coordinator
+                      </span>
+                      <strong className="text-[#F7F4EC] font-serif text-base">
+                        {contact.name}
+                      </strong>
                     </div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <Phone className="w-4 h-4 text-[#D4AF5A] shrink-0 mt-1" />
-                  <div>
-                    <strong className="text-[#F7F4EC] block">Central Reception:</strong>
                     <a
-                      href={`tel:${siteConfig.institution.phone}`}
-                      className="text-xs text-[#C4CFDD] hover:text-[#F7F4EC]"
+                      href={`tel:${contact.phone.replace(/\s+/g, '')}`}
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#D4AF5A] hover:underline"
                     >
-                      {siteConfig.institution.phone}
+                      <Phone className="w-3.5 h-3.5" />
+                      <span>{contact.phone}</span>
                     </a>
                   </div>
+                ))}
+
+                <div className="p-4 rounded-xl bg-[#041126]/80 border border-[#18335D] flex items-center justify-between text-xs">
+                  <div className="flex items-center gap-2.5 text-[#C4CFDD]">
+                    <InstagramIcon className="w-4 h-4 text-[#D4AF5A]" />
+                    <span className="font-semibold">Instagram</span>
+                  </div>
+                  <a
+                    href={siteConfig.social.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-xs font-bold text-[#D4AF5A] hover:underline"
+                  >
+                    {siteConfig.social.instagramHandle}
+                  </a>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <Clock className="w-4 h-4 text-[#D4AF5A] shrink-0 mt-1" />
+                <div className="p-4 rounded-xl bg-[#041126]/80 border border-[#18335D] flex items-center justify-between text-xs">
+                  <div className="flex items-center gap-2.5 text-[#C4CFDD]">
+                    <Globe className="w-4 h-4 text-[#D4AF5A]" />
+                    <span className="font-semibold">Website</span>
+                  </div>
+                  <a
+                    href={siteConfig.social.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-xs font-bold text-[#D4AF5A] hover:underline"
+                  >
+                    {siteConfig.social.websiteDisplay}
+                  </a>
+                </div>
+
+                <div className="p-4 rounded-xl bg-[#041126]/80 border border-[#18335D] flex items-start gap-2.5 text-xs">
+                  <MapPin className="w-4 h-4 text-[#D4AF5A] shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-[#F7F4EC] block">Operating Hours:</strong>
-                    <span className="text-xs text-[#68758A]">
-                      Monday – Saturday, 9:30 AM to 5:30 PM IST
-                    </span>
+                    <span className="text-[10px] text-[#68758A] uppercase font-bold block">Venue &amp; Campus</span>
+                    <strong className="text-[#F7F4EC]">{siteConfig.institution.auditorium}</strong>
+                    <div className="text-[11px] text-[#C4CFDD] pt-0.5">{siteConfig.institution.campus}</div>
                   </div>
                 </div>
               </div>
             </div>
+
+            <div className="pt-4 border-t border-[#18335D] text-xs font-serif italic text-gradient-gold text-center">
+              {siteConfig.partnership.motto}
+            </div>
           </div>
 
-          {/* Inquiry Form */}
-          <div className="lg:col-span-7">
-            <div className="royal-card p-6 sm:p-8 rounded-2xl border-[#D4AF5A]/30">
-              {submitted ? (
-                <div className="py-12 text-center space-y-4 animate-in fade-in duration-300">
-                  <div className="w-16 h-16 rounded-full bg-emerald-950/60 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto">
-                    <CheckCircle2 className="w-8 h-8" />
-                  </div>
-                  <h3 className="font-serif text-2xl font-medium text-[#F7F4EC]">
-                    Message Successfully Dispatched
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#C4CFDD] max-w-md mx-auto leading-relaxed">
-                    Thank you, <strong className="text-[#F7F4EC]">{form.name}</strong>.
-                    Your query has been logged with reference to our student support desk.
-                    We will respond to <span className="text-[#D4AF5A]">{form.email}</span> shortly.
-                  </p>
-                  <button
-                    onClick={() => {
-                      setSubmitted(false);
-                      setForm({
-                        name: '',
-                        email: '',
-                        phone: '',
-                        college: '',
-                        subject: 'General Inquiry',
-                        message: '',
-                      });
-                    }}
-                    className="text-xs text-[#68758A] hover:text-[#C4CFDD] underline pt-2"
-                  >
-                    Send another query
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="flex items-center justify-between pb-3 border-b border-[#18335D]/70">
-                    <div className="flex items-center gap-2">
-                      <MessageSquare className="w-5 h-5 text-[#D4AF5A]" />
-                      <h3 className="font-serif text-lg font-medium text-[#F7F4EC]">
-                        Direct Inquiry Portal
-                      </h3>
-                    </div>
-                    <span className="text-[10px] text-[#68758A] uppercase font-mono">
-                      Official Helpdesk
-                    </span>
-                  </div>
+          {/* Partner with ESSENCE (Sponsorship Opportunities) */}
+          <div className="lg:col-span-7 royal-card p-6 sm:p-8 rounded-2xl border-[#D4AF5A]/30 flex flex-col justify-between space-y-6">
+            <div className="space-y-5">
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#D4AF5A]">
+                  Sponsorship &amp; Alliances
+                </span>
+                <h2 className="font-serif text-3xl font-bold text-[#F7F4EC] pt-1">
+                  Partner with ESSENCE
+                </h2>
+                <p className="text-sm font-serif italic text-gradient-gold pt-0.5">
+                  Support the next generation of innovators.
+                </p>
+              </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div className="space-y-1">
-                      <label className="text-[11px] font-medium text-[#C4CFDD]">
-                        Your Full Name *
-                      </label>
+              <div className="p-5 rounded-xl bg-[#102D5C]/30 border border-[#D4AF5A]/30 space-y-3">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#F0D99A] block">
+                  Sponsorship Opportunities:
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-[#C4CFDD]">
+                  {siteConfig.partnership.sponsorshipOpportunities.map((opp, idx) => (
+                    <div key={idx} className="flex items-start gap-2.5 p-2 rounded-lg bg-[#041126]/50">
+                      <CheckCircle2 className="w-4 h-4 text-[#D4AF5A] shrink-0 mt-0.5" />
+                      <span>{opp}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Inquiry Form */}
+              <div className="pt-2">
+                {submitted ? (
+                  <div className="py-8 text-center space-y-3 animate-in fade-in duration-300">
+                    <div className="w-12 h-12 rounded-full bg-emerald-950/60 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto">
+                      <CheckCircle2 className="w-6 h-6" />
+                    </div>
+                    <h3 className="font-serif text-xl font-medium text-[#F7F4EC]">
+                      Message Successfully Sent
+                    </h3>
+                    <p className="text-xs text-[#C4CFDD]">
+                      Thank you! Our coordinators will get in touch with you shortly.
+                    </p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-3">
+                    <div className="flex items-center gap-2 pb-1 border-b border-[#18335D]">
+                      <MessageSquare className="w-4 h-4 text-[#D4AF5A]" />
+                      <h4 className="font-serif text-sm font-semibold text-[#F7F4EC]">
+                        Send an Inquiry or Partnership Proposal
+                      </h4>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <input
                         type="text"
                         required
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        placeholder="e.g. Sanjana Patil"
+                        placeholder="Your Full Name *"
                         className="w-full px-3 py-2 text-xs rounded-lg bg-[#041126] border border-[#18335D] text-[#F7F4EC] focus:border-[#D4AF5A] focus:outline-none"
                       />
-                    </div>
 
-                    <div className="space-y-1">
-                      <label className="text-[11px] font-medium text-[#C4CFDD]">
-                        Email Address *
-                      </label>
                       <input
                         type="email"
                         required
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        placeholder="sanjana@college.ac.in"
+                        placeholder="Your Email Address *"
                         className="w-full px-3 py-2 text-xs rounded-lg bg-[#041126] border border-[#18335D] text-[#F7F4EC] focus:border-[#D4AF5A] focus:outline-none"
                       />
-                    </div>
 
-                    <div className="space-y-1">
-                      <label className="text-[11px] font-medium text-[#C4CFDD]">
-                        Mobile Contact
-                      </label>
                       <input
                         type="tel"
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                        placeholder="+91 98000 00000"
+                        placeholder="Mobile Number"
                         className="w-full px-3 py-2 text-xs rounded-lg bg-[#041126] border border-[#18335D] text-[#F7F4EC] focus:border-[#D4AF5A] focus:outline-none"
                       />
-                    </div>
 
-                    <div className="space-y-1">
-                      <label className="text-[11px] font-medium text-[#C4CFDD]">
-                        College / Institution
-                      </label>
                       <input
                         type="text"
                         value={form.college}
                         onChange={(e) => setForm({ ...form, college: e.target.value })}
-                        placeholder="e.g. VJTI Mumbai"
+                        placeholder="Organization / Institution"
                         className="w-full px-3 py-2 text-xs rounded-lg bg-[#041126] border border-[#18335D] text-[#F7F4EC] focus:border-[#D4AF5A] focus:outline-none"
                       />
                     </div>
 
-                    <div className="space-y-1 sm:col-span-2">
-                      <label className="text-[11px] font-medium text-[#C4CFDD]">
-                        Subject / Topic *
-                      </label>
-                      <select
-                        value={form.subject}
-                        onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                        className="w-full px-3 py-2 text-xs rounded-lg bg-[#041126] border border-[#18335D] text-[#F7F4EC] focus:border-[#D4AF5A] focus:outline-none"
-                      >
-                        <option value="General Inquiry">General Competition Inquiry</option>
-                        <option value="Registration & Eligibility">Registration &amp; Eligibility</option>
-                        <option value="Team Management">Team Code &amp; Membership</option>
-                        <option value="Idea Submission Technicalities">Idea Submission Technicalities</option>
-                        <option value="College Partnership">College Partnership &amp; Coordinator Deck</option>
-                        <option value="Other">Other Institutional Matter</option>
-                      </select>
-                    </div>
+                    <textarea
+                      required
+                      rows={3}
+                      value={form.message}
+                      onChange={(e) => setForm({ ...form, message: e.target.value })}
+                      placeholder="Your Message, Inquiry, or Sponsorship Interest..."
+                      className="w-full px-3 py-2 text-xs rounded-lg bg-[#041126] border border-[#18335D] text-[#F7F4EC] focus:border-[#D4AF5A] focus:outline-none"
+                    />
 
-                    <div className="space-y-1 sm:col-span-2">
-                      <label className="text-[11px] font-medium text-[#C4CFDD]">
-                        Your Inquiry / Question *
-                      </label>
-                      <textarea
-                        required
-                        rows={4}
-                        value={form.message}
-                        onChange={(e) => setForm({ ...form, message: e.target.value })}
-                        placeholder="Describe your question or requirement clearly..."
-                        className="w-full px-3 py-2 text-xs rounded-lg bg-[#041126] border border-[#18335D] text-[#F7F4EC] focus:border-[#D4AF5A] focus:outline-none"
-                      />
-                    </div>
-                  </div>
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="w-full py-2.5 px-4 rounded-lg text-xs font-bold text-[#041126] bg-[#D4AF5A] hover:bg-[#F0D99A] transition-colors flex items-center justify-center gap-2 shadow"
+                    >
+                      <Send className="w-3.5 h-3.5" />
+                      <span>{loading ? 'Submitting...' : 'Send Message'}</span>
+                    </button>
+                  </form>
+                )}
+              </div>
+            </div>
 
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="w-full py-3 px-4 rounded-lg text-xs font-bold text-[#041126] bg-[#D4AF5A] hover:bg-[#F0D99A] transition-colors flex items-center justify-center gap-2 shadow"
-                  >
-                    {loading ? (
-                      <span>Submitting...</span>
-                    ) : (
-                      <>
-                        <Send className="w-3.5 h-3.5" />
-                        <span>Send Official Inquiry</span>
-                      </>
-                    )}
-                  </button>
-                </form>
-              )}
+            <div className="pt-2 text-center text-xs text-[#68758A]">
+              ESSENCE · FROM IDEAS TO IMPACT
             </div>
           </div>
         </div>

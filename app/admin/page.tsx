@@ -26,7 +26,7 @@ export default function AdminDashboardPage() {
     { label: 'Submissions Received', value: '184', icon: FileText, sub: 'Idea stage proposals', delta: '52 in review' },
     { label: 'Shortlisted for Bootcamp', value: '46', icon: CheckCircle2, sub: 'Target capacity: 500', delta: 'Stage 2' },
     { label: 'Prototype Submissions', value: '18', icon: Layers, sub: 'Working models uploaded', delta: 'Target: 300' },
-    { label: 'Finalists Capacity', value: '50', icon: Award, sub: '100 Exhibition Stalls', delta: '₹5,00,000 Pool' },
+    { label: 'Finalists Capacity', value: '50', icon: Award, sub: 'Chetana Auditorium', delta: '₹1.5 Lakh Pool' },
   ];
 
   return (

@@ -1,11 +1,12 @@
 /**
- * ESSENCE 2027 Registration Portal Configuration
+ * ESSENCE Registration Portal Configuration
  * Centralized schema, options, validation rules, and pricing structure.
- * Sourced directly from the official ESSENCE Google Form & Competition Guidelines.
+ * Sourced directly from the official ESSENCE Competition Guidelines (PAGE 5 & PAGE 8).
  */
 
 export interface RegistrationConfig {
   feeStructure: {
+    teamFee: number;
     chetanaStudentFee: number;
     otherCollegeFee: number;
     currency: string;
@@ -14,6 +15,7 @@ export interface RegistrationConfig {
     bankName: string;
     accountNumber: string;
     ifscCode: string;
+    contacts: { name: string; phone: string }[];
   };
   participantCategories: { id: string; label: string; fee: number }[];
   pursuingLevels: string[];
@@ -22,20 +24,25 @@ export interface RegistrationConfig {
 
 export const registrationConfig: RegistrationConfig = {
   feeStructure: {
-    chetanaStudentFee: 200,
+    teamFee: 500,
+    chetanaStudentFee: 500,
     otherCollegeFee: 500,
     currency: 'INR',
     upiId: 'ciel.essence@okhdfcbank',
-    accountName: "Chetana's CiEL - ESSENCE 2027",
+    accountName: "Chetana's CiEL - ESSENCE",
     bankName: 'HDFC Bank Ltd.',
     accountNumber: '50200088921430',
     ifscCode: 'HDFC0000019',
+    contacts: [
+      { name: 'PREM SHARMA', phone: '+91 9833883098' },
+      { name: 'AKSHAY DUBEY', phone: '+91 8451942277' },
+    ],
   },
   participantCategories: [
     {
       id: 'chetana',
       label: 'Chetana Institute Student',
-      fee: 200,
+      fee: 500,
     },
     {
       id: 'other',
@@ -66,7 +73,7 @@ export interface RegistrationFormData {
 
   // Step 3: Innovation / Competition Details
   teamName: string;
-  participationType: 'solo' | 'team';
+  participationType: 'team';
   teamMember2Name: string;
   teamMember2Email: string;
   teamMember3Name: string;

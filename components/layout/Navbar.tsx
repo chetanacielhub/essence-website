@@ -34,19 +34,19 @@ export default function Navbar() {
           <Link
             href="/"
             className="flex flex-col group transition-transform duration-200"
-            aria-label="ESSENCE 2027 Homepage - Chetana's CiEL"
+            aria-label="ESSENCE Homepage - Chetana's"
           >
             <div className="flex items-center gap-1.5">
-              <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] text-[#D4AF5A] uppercase">
-                Chetana&apos;s CiEL Presents
+              <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.2em] text-[#D4AF5A] uppercase">
+                Chetana&apos;s · CiEL
               </span>
             </div>
             <div className="flex items-baseline gap-2">
               <span className="font-serif text-2xl sm:text-3xl font-medium tracking-tight text-[#F7F4EC] group-hover:text-[#F0D99A] transition-colors">
-                ESSENCE <span className="text-[#D4AF5A] italic">2027</span>
+                ESSENCE
               </span>
             </div>
-            <span className="text-[9px] sm:text-[10px] tracking-wider text-[#68758A] uppercase font-medium">
+            <span className="text-[9px] sm:text-[10px] tracking-wider text-gradient-gold uppercase font-serif italic">
               From Ideas to Impact
             </span>
           </Link>
@@ -159,7 +159,7 @@ export default function Navbar() {
               href="/register"
               className="text-center py-2.5 text-xs font-bold text-[#041126] bg-gradient-to-r from-[#F0D99A] via-[#D4AF5A] to-[#B8923F] rounded-md shadow"
             >
-              Register for ESSENCE 2027
+              Register for ESSENCE
             </Link>
           </div>
         </div>

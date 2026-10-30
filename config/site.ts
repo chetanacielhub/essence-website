@@ -1,40 +1,227 @@
 import { InnovationTrack, SuggestedTrack, ProgrammeTimelineEvent, PrizeCategory, FAQItem, ProgrammeSettings } from '@/types';
 
 export const siteConfig = {
-  name: "ESSENCE 2027",
-  presenter: "Chetana's Centre for Innovation & Entrepreneurship Learning (CiEL)",
+  name: "ESSENCE",
+  fullName: "ESSENCE · From Ideas to Impact",
+  presenter: "Chetana’s R. K. Institute of Management & Research & Institute of Management & Research",
   shortPresenter: "Chetana's CiEL",
   tagline: "From Ideas to Impact",
-  supportingLine: "Maharashtra Undergraduate Innovation & Prototype Development Festival",
+  supportingLine: "An entrepreneurial competition where innovative ideas compete to become impactful ventures.",
   description:
-    "An undergraduate innovation and prototype-development initiative bringing students across Maharashtra together to identify real-world challenges, develop practical solutions and present their ideas to industry and academic experts.",
+    "An entrepreneurial competition where innovative ideas compete to become impactful ventures. A startup-building journey for student founders from raw concept to a venture-ready pitch.",
   url: "https://essence.cielhub.org",
+  grandFundPool: "₹1.5 Lakh",
+  grandFundPoolAmount: 150000,
   institution: {
-    name: "Chetana's Centre for Innovation & Entrepreneurship Learning",
+    name: "Chetana's R. K. Institute of Management & Research & Institute of Management & Research",
+    centre: "Centre for Innovation & Entrepreneurship Learning (CiEL)",
     campus: "Chetana's Campus, Survey No. 341, Govt. Colony, Bandra (East), Mumbai - 400051, Maharashtra, India",
+    auditorium: "Chetana’s Auditorium",
     parentTrust: "Chetana's Trust",
     email: "ciel@chetana.org",
     supportEmail: "essence@cielhub.org",
     phone: "+91 22 6215 7800",
-    website: "https://cielhub.org",
+    website: "https://www.cielhub.org",
+    contacts: [
+      { name: "PREM SHARMA", phone: "+91 9833883098" },
+      { name: "AKSHAY DUBEY", phone: "+91 8451942277" },
+    ],
   },
   social: {
     linkedin: "https://www.linkedin.com/school/chetanas-management/",
-    instagram: "https://instagram.com/chetanas_ciel",
-    twitter: "https://twitter.com/chetanaciel",
+    instagram: "https://instagram.com/ciel_chetana",
+    instagramHandle: "@ciel_chetana",
+    website: "https://www.cielhub.org",
+    websiteDisplay: "www.cielhub.org",
   },
-  // Planning figures (Proposed targets for planning purposes, strictly maintained)
+  // Official Registration & Event Details (from Brochure)
+  registrationDetails: {
+    teamSize: "2–4 people",
+    minTeamSize: 2,
+    maxTeamSize: 4,
+    registrationFee: "₹500 per team",
+    registrationFeeAmount: 500,
+    lastDate: "26 November",
+    bootcampDate: "28 November",
+    mainEventDate: "21–22 December",
+    time: "10:00 AM",
+    venue: "Chetana’s Auditorium",
+    grandFundPool: "₹1.5 Lakh",
+  },
+  // Purpose, Vision & Mission (PAGE 2)
+  purpose: {
+    title: "OUR PURPOSE. OUR FUTURE.",
+    subtitle: "The vision that drives innovation and impact.",
+    vision:
+      "To be a premier hub for nurturing an innovative mindset and entrepreneurial talents to produce significant, long-term solutions to global challenges.",
+    mission:
+      "Cultivating an ecosystem that allows individuals to translate ideas into significant initiatives through experiential learning, interdisciplinary collaboration, and strategic partnerships to generate long-term economic and social growth.",
+  },
+  // What is ESSENCE? (PAGE 3)
+  whatIsEssence: {
+    title: "What is ESSENCE?",
+    subtitle: "More than a competition. A real startup-building journey.",
+    description: "A startup-building journey for student founders from raw concept to a venture-ready pitch.",
+    pillars: [
+      {
+        number: "01",
+        title: "IDEATE",
+        heading: "IDEATE – 01",
+        summary: "Begin with a raw concept and shape it into a problem worth solving.",
+        description: "Turn your imagination into innovative ideas that inspire change.",
+      },
+      {
+        number: "02",
+        title: "INNOVATE",
+        heading: "INNOVATE – 02",
+        summary: "Test, refine and build your idea into a real, workable venture.",
+        description: "Validate assumptions, prototype solutions, and build an operational foundation.",
+      },
+      {
+        number: "03",
+        title: "CREATE IMPACT",
+        heading: "CREATE IMPACT – 03",
+        summary: "Pitch with confidence and turn your venture into real-world impact.",
+        description: "Showcase on the big stage, gain mentor networks, and launch your entrepreneurial venture.",
+      },
+    ],
+  },
+  // What You Walk Away With (PAGE 4)
+  walkAwayWith: [
+    "Validated Business Model",
+    "Prototype and GTM Plan",
+    "Mentor and Founder Network",
+    "Certificates and Recognition",
+    "Funding opportunity up to ₹1.5 Lakh",
+  ],
+  // Why Participate? (PAGE 6)
+  whyParticipate: [
+    {
+      id: 1,
+      number: "01",
+      title: "Structured Learning Journey",
+      description: "From raw idea to venture-ready pitch.",
+    },
+    {
+      id: 2,
+      number: "02",
+      title: "Mentorship & Expert Guidance",
+      description: "Learn from industry leaders and entrepreneurs.",
+    },
+    {
+      id: 3,
+      number: "03",
+      title: "Build Real Solutions",
+      description: "Validate, prototype and develop your idea.",
+    },
+    {
+      id: 4,
+      number: "04",
+      title: "Funding Opportunity",
+      description: "Compete for a grand fund pool of up to ₹1.5 Lakh.",
+    },
+    {
+      id: 5,
+      number: "05",
+      title: "Pitch on the Big Stage",
+      description: "Present your venture at the 2-day grand finale.",
+    },
+    {
+      id: 6,
+      number: "06",
+      title: "Network & Collaborate",
+      description: "Meet like-minded founders across institutions.",
+    },
+    {
+      id: 7,
+      number: "07",
+      title: "Recognition & Rewards",
+      description: "Certificates, prizes and visibility for your venture.",
+    },
+    {
+      id: 8,
+      number: "08",
+      title: "Make an Impact",
+      description: "Create solutions for real-world challenges.",
+    },
+  ],
+  // Who Can Join? (PAGE 6)
+  whoCanJoin: {
+    tagline: "Fewer rules. More founders.",
+    points: [
+      {
+        title: "Open to all",
+        description: "Students and aspiring founders from any institution.",
+      },
+      {
+        title: "No academic gate",
+        description: "Any stream, any year. If you have an idea, you belong here.",
+      },
+      {
+        title: "Team of 2–4 members",
+        description: "Cross-college and cross-stream teams are welcome.",
+      },
+      {
+        title: "Register by 26 November",
+        description: "Registration is live. Complete your team submission online.",
+      },
+    ],
+  },
+  // Code of Conduct (PAGE 7)
+  codeOfConduct: [
+    {
+      number: "01",
+      title: "Respect and Courtesy",
+      description: "All participants must treat organizers, judges, and fellow teams with respect and courtesy.",
+    },
+    {
+      number: "02",
+      title: "Misconduct and Disqualification",
+      description:
+        "Any form of misconduct, harassment, or disruption of another team's presentation will lead to immediate disqualification and may be reported to the respective college.",
+    },
+    {
+      number: "03",
+      title: "Organizers' Rights",
+      description:
+        "Organizers reserve the right to modify the schedule, judging panel, or rules if circumstances require, with prior notice to all registered teams.",
+    },
+    {
+      number: "04",
+      title: "Final Decisions",
+      description: "Decisions made by the organizing committee and judges are final and binding on all matters related to the event.",
+    },
+    {
+      number: "05",
+      title: "Confidentiality",
+      description:
+        "Participants must not disclose confidential information, trade secrets, or proprietary material belonging to other teams without permission.",
+    },
+  ],
+  // Partnership & Sponsorship (PAGE 8)
+  partnership: {
+    header: "Your Spark. Our Stage. Endless Possibilities.",
+    subheading: "Register your team with ESSENCE to back the next generation of founders.",
+    partnerTitle: "Partner with ESSENCE",
+    partnerSubtitle: "Support the next generation of innovators.",
+    sponsorshipOpportunities: [
+      "Brand visibility among emerging talent.",
+      "Engage with top student talent.",
+      "CSR and social impact alignment.",
+      "Connect with future founders.",
+    ],
+    motto: "IDEATE • INNOVATE • CREATE IMPACT",
+  },
+  // Planning and outreach indicators
   planningTargets: {
-    geographicScope: "Maharashtra",
+    grandFundPool: "₹1.5 Lakh",
+    teamSize: "2–4 members",
+    registrationFee: "₹500 / team",
+    bootcampDate: "28 Nov",
+    finaleDate: "21–22 Dec",
+    venue: "Chetana's Auditorium",
     collegeOutreach: "100+",
     studentOutreach: "5,000+",
-    applicationTarget: "1,000+",
-    bootcampTarget: "500",
-    prototypeTarget: "300+",
-    finalistTarget: "50",
-    exhibitionStalls: "100", // 50 prototypes, 40 engineering projects, 10 sponsor stalls
-    totalProposedBudget: 2213000, // ₹22,13,000 total proposed budget
-    proposedPrizePool: 500000,    // ₹5,00,000 (Forms part of total budget; do not double count)
   },
   navItems: [
     { label: "Home", href: "/" },
@@ -51,13 +238,13 @@ export const siteConfig = {
     competition: [
       { label: "Competition Journey", href: "/journey" },
       { label: "Innovation Tracks", href: "/tracks" },
-      { label: "Eligibility Criteria", href: "/eligibility" },
-      { label: "Rules & Guidelines", href: "/rules" },
+      { label: "Who Can Join", href: "/eligibility" },
+      { label: "Code of Conduct", href: "/rules" },
       { label: "Official Timeline", href: "/timeline" },
-      { label: "Awards & Recognition", href: "/awards" },
+      { label: "Awards & Pool", href: "/awards" },
     ],
     participate: [
-      { label: "Register for ESSENCE", href: "/register" },
+      { label: "Register Your Team", href: "/register" },
       { label: "Participant Login", href: "/login" },
       { label: "Prototype Showcase", href: "/showcase" },
       { label: "Mentorship Model", href: "/mentorship" },
@@ -66,7 +253,7 @@ export const siteConfig = {
     ],
     institution: [
       { label: "About CiEL", href: "/about" },
-      { label: "Contact Us", href: "/contact" },
+      { label: "Let's Connect", href: "/contact" },
       { label: "Official Results", href: "/results" },
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Terms & Conditions", href: "/terms" },
@@ -82,8 +269,8 @@ export const initialProgrammeSettings: ProgrammeSettings = {
   isEvaluationLive: false,
   areResultsPublished: false,
   maxTeamSize: 4,
-  minTeamSize: 1,
-  bannerMessage: "Registration is now open for Maharashtra Undergraduate Colleges. Submit your idea today!",
+  minTeamSize: 2,
+  bannerMessage: "Registration is live! Register your team of 2–4 members before 26 November. Grand Fund Pool: ₹1.5 Lakh.",
   isBannerActive: true,
   bannerLink: "/register",
 };
@@ -112,7 +299,7 @@ export const innovationTracks: InnovationTrack[] = [
     name: "Sustainability & Environment",
     iconName: "Leaf",
     description: "Clean energy solutions, circular waste valorisation, water conservation, and eco-friendly consumer alternatives.",
-    detailedDescription: "Focused on Maharashtra's pressing environmental challenges—from industrial effluent management to urban e-waste, rainwater harvesting, and renewable energy adoption for micro-communities.",
+    detailedDescription: "Focused on pressing environmental challenges—from industrial effluent management to urban e-waste, rainwater harvesting, and renewable energy adoption for micro-communities.",
     examples: [
       "Decentralised composting and bio-fertilizer conversion kits",
       "Smart domestic water audit and leak prevention sensors",
@@ -146,7 +333,7 @@ export const innovationTracks: InnovationTrack[] = [
     name: "Agriculture & Rural Development",
     iconName: "Sprout",
     description: "Precision farming tools, post-harvest preservation, farm mechanisation, and farmer market linkage solutions.",
-    detailedDescription: "Tailored to agrarian realities across Vidarbha, Marathwada, Western Maharashtra, and Konkan. Prioritising water-efficient irrigation, crop disease detection, and decentralised processing.",
+    detailedDescription: "Tailored to agrarian realities. Prioritising water-efficient irrigation, crop disease detection, and decentralised processing.",
     examples: [
       "Solar-assisted grain dryers for smallholder farmers",
       "Soil moisture telemetry pods communicating over LoRaWAN",
@@ -163,7 +350,7 @@ export const innovationTracks: InnovationTrack[] = [
     name: "Education & Accessibility",
     iconName: "GraduationCap",
     description: "Inclusive learning aids, STEM experimental kits, neurodiverse curriculum tools, and vocational training hardware.",
-    detailedDescription: "Innovations bridging the disparity between urban and rural education, tactile learning tools for visually impaired students, and interactive vocational training aids for polytechnic apprentices.",
+    detailedDescription: "Innovations bridging educational disparities, tactile learning tools for visually impaired students, and interactive vocational training aids for apprentices.",
     examples: [
       "Low-cost tactile Braille learning slate with audio playback",
       "Open-source laboratory apparatus for secondary schools",
@@ -197,7 +384,7 @@ export const innovationTracks: InnovationTrack[] = [
     name: "Smart Communities & Civic Problem-Solving",
     iconName: "Building2",
     description: "Urban mobility, municipal waste reporting, public safety systems, and participatory governance tools.",
-    detailedDescription: "Civic innovations solving municipal and neighbourhood problems in Maharashtra's growing towns and metropolitan zones—from public transit punctuality to flood-prone drainage telemetry.",
+    detailedDescription: "Civic innovations solving municipal and neighbourhood problems in growing towns and metropolitan zones—from public transit punctuality to drainage telemetry.",
     examples: [
       "Community flood-level warning beacons for urban nullahs",
       "Crowdsourced bus timing telemetry for municipal transit",
@@ -210,161 +397,117 @@ export const innovationTracks: InnovationTrack[] = [
   },
 ];
 
+// The Journey: 4 Stages, One Destination (PAGE 4)
 export const competitionStages: ProgrammeTimelineEvent[] = [
   {
     id: "stage-1",
     stageNumber: 1,
-    title: "Discovery & Awareness",
-    shortDescription: "Campus outreach across 100+ colleges in Maharashtra to introduce ESSENCE 2027.",
-    longDescription: "Colleges, faculty coordinators, and undergraduate students discover the competition, eligibility terms, and problem tracks through campus sessions and digital briefings.",
-    participantAction: "Explore competition tracks, review eligibility rules, and form your team.",
-    dates: "Stage Open",
+    title: "REGISTER",
+    shortDescription: "Assemble your team: 2–4 members, fill registration form. Closes 26 November.",
+    longDescription: "Assemble your team. Form a team of 2–4 members and fill in the registration form. Registration closes 26 November.",
+    participantAction: "Form your team of 2–4 members, complete the registration form, and register before 26 November.",
+    dates: "Before – 26 November",
     isDateConfirmed: true,
-    status: "completed",
+    status: "in_progress",
+    bulletPoints: [
+      "Form a team of 2–4 members.",
+      "Fill in the registration form.",
+      "Registration closes 26 November.",
+    ],
   },
   {
     id: "stage-2",
     stageNumber: 2,
-    title: "Registration & Profile Creation",
-    shortDescription: "Student registration opens for individuals and teams up to 4 members.",
-    longDescription: "Undergraduates create their verified profile, invite team members if participating collectively, and select their primary innovation track.",
-    participantAction: "Register your account, complete college details, and invite teammates.",
-    dates: "Active Now",
+    title: "BOOTCAMP",
+    shortDescription: "Find the right problem: Design thinking, problem validation, market research, business model basics.",
+    longDescription: "Find the right problem. Comprehensive bootcamp covering design thinking, problem validation, market research, and business model basics.",
+    participantAction: "Attend the interactive bootcamp on 28 November to refine and validate your venture hypothesis.",
+    dates: "28 November",
     isDateConfirmed: true,
-    status: "in_progress",
+    status: "upcoming",
+    bulletPoints: [
+      "Design thinking.",
+      "Problem validation.",
+      "Market research.",
+      "Business model basics.",
+    ],
   },
   {
     id: "stage-3",
     stageNumber: 3,
-    title: "Idea Submission",
-    shortDescription: "Submit problem statement, proposed technical solution, and initial prototype plan.",
-    longDescription: "Teams document the problem context, target beneficiaries, novelty of approach, and feasibility. Drafts can be saved before final submission.",
-    participantAction: "Complete the online idea submission form before the stage closing date.",
-    dates: "Provisional Timeline: Phase 1",
-    isDateConfirmed: false,
-    status: "open",
+    title: "BUILD & REFINE",
+    shortDescription: "Turn ideas into reality: Develop prototype, test and improve solution, refine business model, perfect pitch.",
+    longDescription: "Turn ideas into reality. Develop your prototype, test and improve your solution, refine your business model, and perfect your final pitch.",
+    participantAction: "Develop your prototype, validate with users, and perfect your presentation deck.",
+    dates: "After Bootcamp",
+    isDateConfirmed: true,
+    status: "upcoming",
+    bulletPoints: [
+      "Develop your prototype.",
+      "Test and improve your solution.",
+      "Refine your business model.",
+      "Perfect your final pitch.",
+    ],
   },
   {
     id: "stage-4",
     stageNumber: 4,
-    title: "Screening & Shortlisting",
-    shortDescription: "Independent academic and industry evaluators assess all valid submissions.",
-    longDescription: "Submissions are reviewed against structured criteria including problem significance, innovation, feasibility, and potential impact. Top ideas advance to bootcamp.",
-    participantAction: "Monitor your participant dashboard for evaluation outcome announcements.",
-    dates: "Provisional Timeline: Phase 2",
-    isDateConfirmed: false,
+    title: "GRAND FINALE",
+    shortDescription: "Pitch. Win. Impact. Final pitches, 10:00 AM at Chetana's Auditorium. Up to ₹1.5 Lakh fund pool.",
+    longDescription: "Pitch. Win. Impact. Final pitches starting at 10:00 AM at Chetana's Auditorium. Recognition and funding from a pool of up to ₹1.5 Lakh.",
+    participantAction: "Present your venture before distinguished judges at Chetana's Auditorium.",
+    dates: "21–22 December",
+    isDateConfirmed: true,
     status: "upcoming",
-  },
-  {
-    id: "stage-5",
-    stageNumber: 5,
-    title: "Mentorship & Prototype Bootcamps",
-    shortDescription: "Shortlisted teams receive guidance from seasoned mentors to build their prototypes.",
-    longDescription: "500 bootcamp participants engage in specialised workshops on rapid prototyping, hardware-software testing, customer validation, and intellectual property protection.",
-    participantAction: "Attend structured masterclasses and work with assigned innovation mentors.",
-    dates: "Provisional Timeline: Phase 3",
-    isDateConfirmed: false,
-    status: "upcoming",
-  },
-  {
-    id: "stage-6",
-    stageNumber: 6,
-    title: "Prototype Submission & Review",
-    shortDescription: "Submit working prototype documentation, demonstration videos, and test evidence.",
-    longDescription: "Teams present tangible evidence of functional implementation, bill of materials, user validation insights, and 10MB PDF pitch decks for grand finale qualification.",
-    participantAction: "Upload working prototype evidence, test metrics, and presentation deck.",
-    dates: "Provisional Timeline: Phase 4",
-    isDateConfirmed: false,
-    status: "upcoming",
-  },
-  {
-    id: "stage-7",
-    stageNumber: 7,
-    title: "Grand Finale & Prototype Exhibition",
-    shortDescription: "50 finalist teams exhibit at the 100-stall Maharashtra Innovation Showcase.",
-    longDescription: "Live in-person prototype exhibition on Chetana's campus before distinguished jury members, angel investors, incubation heads, and industry leaders.",
-    participantAction: "Demonstrate live hardware/software prototypes at your allocated stall.",
-    dates: "Provisional Timeline: Grand Finale",
-    isDateConfirmed: false,
-    status: "upcoming",
-  },
-  {
-    id: "stage-8",
-    stageNumber: 8,
-    title: "Awards & Incubation Progression",
-    shortDescription: "₹5,00,000 proposed prize pool distribution, citations, and incubation support.",
-    longDescription: "Winners receive cash awards, official CiEL trophies, and eligible finalists are connected with Chetana's incubation pathways and relevant ecosystem partners.",
-    participantAction: "Receive formal awards and explore follow-on incubation opportunities.",
-    dates: "Closing Ceremony",
-    isDateConfirmed: false,
-    status: "upcoming",
+    bulletPoints: [
+      "Final pitches, 10:00 AM.",
+      "Chetana's Auditorium.",
+      "Recognition and funding from a pool of up to ₹1.5 Lakh.",
+    ],
   },
 ];
 
 export const prizeCategories: PrizeCategory[] = [
   {
     id: "grand-champion",
-    title: "ESSENCE 2027 Grand Winner",
+    title: "ESSENCE Grand Winner",
     award: "State Innovation Trophy & Cash Grant",
-    amount: 150000,
-    description: "Conferred on the highest-scoring undergraduate prototype demonstrating exceptional ingenuity, technical execution, and verifiable social or market impact.",
-    badgeText: "Proposed: ₹1,50,000",
+    amount: 75000,
+    description: "Conferred on the highest-scoring venture demonstrating exceptional innovation, validated business model, and high scalability potential.",
+    badgeText: "Fund Grant: ₹75,000",
     benefits: [
+      "Funding opportunity from ₹1.5 Lakh grand pool",
       "Direct incubation review at Chetana's CiEL",
-      "Dedicated stall in Prime Innovation Row at Grand Finale",
       "Executive mentorship by veteran startup founders",
-      "Official Trophy and Winner Citations for all team members",
+      "Official Winner Citation and Trophy",
     ],
   },
   {
     id: "first-runner-up",
     title: "First Runner-Up",
-    award: "State Excellence Award & Cash Grant",
-    amount: 100000,
-    description: "Awarded to the outstanding team with exemplary engineering, strong validation data, and high scalability potential across Maharashtra.",
-    badgeText: "Proposed: ₹1,00,000",
+    award: "Excellence Trophy & Cash Grant",
+    amount: 45000,
+    description: "Awarded to the outstanding runner-up team with strong prototype validation, market research, and high impact viability.",
+    badgeText: "Fund Grant: ₹45,000",
     benefits: [
+      "Funding opportunity from ₹1.5 Lakh grand pool",
       "Fast-track incubation review access",
-      "Prototype refinement lab vouchers & guidance",
       "Official Runner-Up Citation & Trophy",
+      "Domain mentor network pairing",
     ],
   },
   {
     id: "second-runner-up",
-    title: "Second Runner-Up",
-    award: "Special Commendation & Cash Grant",
-    amount: 50000,
-    description: "Recognising remarkable student creativity and functional execution tackling pressing regional challenges.",
-    badgeText: "Proposed: ₹50,000",
+    title: "Second Runner-Up & Citations",
+    award: "Special Commendation & Grant",
+    amount: 30000,
+    description: "Recognising remarkable student creativity, functional prototype execution, and social/economic impact potential.",
+    badgeText: "Fund Grant: ₹30,000",
     benefits: [
+      "Funding opportunity from ₹1.5 Lakh grand pool",
       "Ecosystem mentorship linkage",
-      "CiEL innovation showcase feature",
       "Official Commendation Certificate & Plaque",
-    ],
-  },
-  {
-    id: "track-winners",
-    title: "Innovation Track Champions (7 Tracks)",
-    award: "Category Excellence Awards",
-    amount: 140000, // ₹20,000 x 7 = ₹1,40,000
-    description: "Top-ranked undergraduate innovation in each of the 7 designated competition tracks.",
-    badgeText: "Proposed: ₹20,000 per track (₹1,40,000 total)",
-    benefits: [
-      "Track Excellence Certificate & Plaque",
-      "Domain-specific industry mentor pairing",
-      "Dedicated stall at the 100-stall exhibition",
-    ],
-  },
-  {
-    id: "special-citations",
-    title: "Special Jury Awards & Rural Impact Citations",
-    award: "Grassroots & Women Innovators Grants",
-    amount: 60000,
-    description: "Grants encouraging high-impact grassroots innovations, sustainable materials, and outstanding all-women innovator teams.",
-    badgeText: "Proposed: ₹60,000 pool",
-    benefits: [
-      "Special Recognition Citations",
-      "Feature in Official ESSENCE 2027 Annual Compendium",
+      "GTM guidance from CiEL advisors",
     ],
   },
 ];
@@ -373,72 +516,72 @@ export const faqList: FAQItem[] = [
   {
     id: "faq-1",
     category: "Eligibility",
-    question: "Who is eligible to participate in ESSENCE 2027?",
+    question: "Who can join ESSENCE?",
     answer:
-      "All bona fide undergraduate students enrolled in any recognised college, university, or polytechnic institution across the state of Maharashtra are eligible. Students from engineering, commerce, arts, sciences, pharmacy, management, architecture, and vocational streams are welcome.",
+      "ESSENCE operates on 'Fewer rules. More founders.' It is open to all students and aspiring founders from any institution. There is no academic gate—any stream, any year. If you have an idea, you belong here.",
   },
   {
     id: "faq-2",
-    category: "Eligibility",
-    question: "Can post-graduate or PhD students participate?",
+    category: "Teams & Registration",
+    question: "What is the team size requirement?",
     answer:
-      "ESSENCE 2027 is strictly designed as an undergraduate innovation festival. While postgraduate students and alumni are not eligible to register as participants, faculty members and senior researchers may act as college coordinators or team mentors.",
+      "Teams must comprise 2 to 4 people. Cross-college and cross-stream teams are very warmly welcomed.",
   },
   {
     id: "faq-3",
     category: "Teams & Registration",
-    question: "Can I register as an individual, or is a team mandatory?",
+    question: "What is the registration fee?",
     answer:
-      "You may participate either as an individual or in a team of 2 to 4 members. We strongly encourage interdisciplinary teams (for example, combining engineering students with commerce or design students) to ensure both technical feasibility and real-world viability.",
+      "The registration fee is ₹500 per team. Registration closes on 26 November.",
   },
   {
     id: "faq-4",
     category: "Teams & Registration",
-    question: "Can team members be from different colleges?",
+    question: "When is the last date to register?",
     answer:
-      "Yes, cross-college collaborations within recognised institutions in Maharashtra are permitted. The team leader's college will be designated as the primary institutional reference for communications and administrative purposes.",
+      "The deadline for team registration is 26 November. We encourage teams to register early to prepare for the Bootcamp on 28 November.",
   },
   {
     id: "faq-5",
-    category: "Teams & Registration",
-    question: "Is there any registration fee to participate in ESSENCE 2027?",
+    category: "Submissions & Prototype",
+    question: "What happens during the Bootcamp on 28 November?",
     answer:
-      "No. Registration for ESSENCE 2027 is completely free of charge. Chetana's CiEL is committed to ensuring that financial barriers do not prevent promising student innovators from participating.",
+      "The Bootcamp is an intensive journey focusing on finding the right problem through design thinking, problem validation, market research, and business model basics.",
   },
   {
     id: "faq-6",
     category: "Submissions & Prototype",
-    question: "What should an initial idea submission contain?",
+    question: "What is the 'Build & Refine' stage?",
     answer:
-      "Stage 1 requires a clear problem statement, an explanation of who experiences the problem, your proposed solution, target beneficiaries, current development stage, and a realistic prototype development plan. No working hardware is required at the initial registration stage.",
+      "After the Bootcamp, teams turn their ideas into reality by developing their prototype, testing and improving their solution, refining their business model, and perfecting their final pitch.",
   },
   {
     id: "faq-7",
-    category: "Submissions & Prototype",
-    question: "What is required at the prototype stage?",
+    category: "Awards & Venue",
+    question: "When and where is the Grand Finale held?",
     answer:
-      "Shortlisted teams advancing to the prototype stage must submit evidence of a working prototype (photographs, test results, circuit diagrams or software demo links), a brief demonstration video, and a pitch deck (PDF format, up to 10MB).",
+      "The Grand Finale takes place on 21–22 December, with final pitches starting at 10:00 AM at Chetana’s Auditorium in Bandra (East), Mumbai.",
   },
   {
     id: "faq-8",
-    category: "Mentorship & Judging",
-    question: "How are submissions evaluated?",
+    category: "Awards & Venue",
+    question: "What is the Grand Fund Pool?",
     answer:
-      "Submissions are evaluated by independent panels of academic researchers, industry veterans, and startup practitioners. Scoring is based on problem significance, novelty, technical feasibility, potential societal/economic impact, and prototype progress. Internal reviewer notes remain strictly confidential.",
+      "Teams compete for recognition and funding from a grand pool of up to ₹1.5 Lakh, alongside validated GTM plans, founder networks, and certificates.",
   },
   {
     id: "faq-9",
     category: "Mentorship & Judging",
-    question: "Who retains intellectual property (IP) rights to submitted ideas?",
+    question: "What do participants walk away with?",
     answer:
-      "All intellectual property rights remain 100% with the participating students and their respective institutions. Chetana's CiEL does not claim any ownership stake in student innovations.",
+      "Participants walk away with: 1. Validated Business Model, 2. Prototype and GTM Plan, 3. Mentor and Founder Network, 4. Certificates and Recognition, and 5. Funding opportunity up to ₹1.5 Lakh.",
   },
   {
     id: "faq-10",
-    category: "Awards & Venue",
-    question: "Where will the Grand Finale and Exhibition be held?",
+    category: "Mentorship & Judging",
+    question: "How do I connect with the organizers?",
     answer:
-      "The Grand Finale and 100-stall Innovation Exhibition will take place at the Chetana's Institute of Management & Research Campus in Bandra (East), Mumbai. Finalist teams will be allocated physical exhibition stalls to demonstrate their prototypes.",
+      "You can connect directly with our organizing team: Prem Sharma (+91 9833883098) or Akshay Dubey (+91 8451942277), follow @ciel_chetana on Instagram, or visit www.cielhub.org.",
   },
 ];
 

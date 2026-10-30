@@ -85,23 +85,13 @@ export default function RegisterPage() {
     };
   });
 
-  // Calculate dynamic fee
-  const calculatedFee =
-    formData.participantCategory === 'Chetana Institute Student'
-      ? registrationConfig.feeStructure.chetanaStudentFee
-      : registrationConfig.feeStructure.otherCollegeFee;
+  // Registration Fee is fixed at ₹500 per team (from official brochure)
+  const calculatedFee = registrationConfig.feeStructure.teamFee || 500;
 
   // Update form data and sync to draft storage
   const updateForm = (fields: Partial<RegistrationFormData>) => {
     setFormData((prev) => {
-      const updated = { ...prev, ...fields };
-      // Keep fee in sync with category
-      if (fields.participantCategory) {
-        updated.registrationFee =
-          fields.participantCategory === 'Chetana Institute Student'
-            ? registrationConfig.feeStructure.chetanaStudentFee
-            : registrationConfig.feeStructure.otherCollegeFee;
-      }
+      const updated = { ...prev, ...fields, registrationFee: calculatedFee };
       if (typeof window !== 'undefined') {
         try {
           localStorage.setItem('essence_registration_draft', JSON.stringify(updated));
@@ -321,8 +311,12 @@ export default function RegisterPage() {
             </div>
 
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#F7F4EC]">
-              Welcome to <span className="text-[#D4AF5A]">ESSENCE 2027</span>
+              Welcome to <span className="text-[#D4AF5A]">ESSENCE</span>
             </h1>
+
+            <div className="text-base sm:text-lg font-serif italic text-gradient-gold">
+              From Ideas to Impact
+            </div>
 
             <p className="text-sm sm:text-base text-[#C4CFDD] max-w-xl mx-auto leading-relaxed">
               Congratulations, <strong className="text-[#F7F4EC]">{formData.teamLeaderName}</strong>! Your registration
@@ -468,13 +462,36 @@ export default function RegisterPage() {
           </div>
 
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#F7F4EC]">
-            Register for <span className="text-[#D4AF5A]">ESSENCE 2027</span>
+            Register for <span className="text-[#D4AF5A]">ESSENCE</span>
           </h1>
 
+          <div className="text-base sm:text-lg font-serif italic text-gradient-gold">
+            From Ideas to Impact
+          </div>
+
           <p className="text-xs sm:text-sm text-[#C4CFDD] max-w-xl mx-auto leading-relaxed">
-            Turn your undergraduate ideas into practical impact. Complete the multi-step registration below to enter
-            Maharashtra&apos;s premier innovation festival.
+            An entrepreneurial competition where innovative ideas compete to become impactful ventures.
+            Grand Fund Pool of up to ₹1.5 Lakh. Assemble your team of 2–4 members and register below.
           </p>
+
+          {/* Quick Particulars Bar */}
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-2 text-[11px] text-[#C4CFDD]">
+            <span className="px-3 py-1 rounded-full bg-[#102D5C]/70 border border-[#D4AF5A]/30">
+              Team Size: <strong className="text-[#F7F4EC]">2–4 People</strong>
+            </span>
+            <span className="px-3 py-1 rounded-full bg-[#102D5C]/70 border border-[#D4AF5A]/30">
+              Fee: <strong className="text-[#D4AF5A]">₹500 / team</strong>
+            </span>
+            <span className="px-3 py-1 rounded-full bg-[#102D5C]/70 border border-[#D4AF5A]/30">
+              Last Date: <strong className="text-[#F7F4EC]">26 Nov</strong>
+            </span>
+            <span className="px-3 py-1 rounded-full bg-[#102D5C]/70 border border-[#D4AF5A]/30">
+              Bootcamp: <strong className="text-[#F7F4EC]">28 Nov</strong>
+            </span>
+            <span className="px-3 py-1 rounded-full bg-[#102D5C]/70 border border-[#D4AF5A]/30">
+              Grand Finale: <strong className="text-[#F7F4EC]">21–22 Dec</strong>
+            </span>
+          </div>
         </div>
 
         {/* Multi-Step Progress Indicator */}
@@ -599,7 +616,7 @@ export default function RegisterPage() {
                       <Building className="w-4 h-4 text-[#D4AF5A] shrink-0 mt-0.5" />
                       <div>
                         <strong className="text-xs block text-[#F7F4EC]">Chetana Institute Student</strong>
-                        <span className="text-[10px] text-[#C4CFDD]">CIMR / CRKIMR students (₹200 Registration Fee)</span>
+                        <span className="text-[10px] text-[#C4CFDD]">CIMR / CRKIMR student team (₹500 per team)</span>
                       </div>
                     </button>
 
@@ -615,7 +632,7 @@ export default function RegisterPage() {
                       <GraduationCap className="w-4 h-4 text-[#D4AF5A] shrink-0 mt-0.5" />
                       <div>
                         <strong className="text-xs block text-[#F7F4EC]">Other Institute Student</strong>
-                        <span className="text-[10px] text-[#C4CFDD]">All accredited colleges (₹500 Registration Fee)</span>
+                        <span className="text-[10px] text-[#C4CFDD]">All institutions &amp; universities (₹500 per team)</span>
                       </div>
                     </button>
                   </div>
@@ -728,39 +745,13 @@ export default function RegisterPage() {
               <div className="space-y-4">
                 {/* Participation Type */}
                 <div className="space-y-2">
-                  <label className="text-[11px] font-medium text-[#C4CFDD]">Participation Type *</label>
-                  <div className="grid grid-cols-2 gap-3">
-                    <button
-                      type="button"
-                      onClick={() => updateForm({ participationType: 'team' })}
-                      className={`p-3 rounded-xl border text-left flex items-start gap-2.5 transition-all ${
-                        formData.participationType === 'team'
-                          ? 'bg-[#102D5C] border-[#D4AF5A] text-[#F7F4EC]'
-                          : 'bg-[#041126] border-[#18335D] text-[#68758A]'
-                      }`}
-                    >
-                      <Users className="w-4 h-4 text-[#D4AF5A] shrink-0 mt-0.5" />
-                      <div>
-                        <strong className="text-xs block text-[#F7F4EC]">Team Entry (2–4 Members)</strong>
-                        <span className="text-[10px]">Collaborative group innovation</span>
-                      </div>
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => updateForm({ participationType: 'solo' })}
-                      className={`p-3 rounded-xl border text-left flex items-start gap-2.5 transition-all ${
-                        formData.participationType === 'solo'
-                          ? 'bg-[#102D5C] border-[#D4AF5A] text-[#F7F4EC]'
-                          : 'bg-[#041126] border-[#18335D] text-[#68758A]'
-                      }`}
-                    >
-                      <User className="w-4 h-4 text-[#D4AF5A] shrink-0 mt-0.5" />
-                      <div>
-                        <strong className="text-xs block text-[#F7F4EC]">Solo Entry</strong>
-                        <span className="text-[10px]">Single undergraduate innovator</span>
-                      </div>
-                    </button>
+                  <label className="text-[11px] font-medium text-[#C4CFDD]">Team Participation (2–4 Members required) *</label>
+                  <div className="p-3.5 rounded-xl border bg-[#102D5C] border-[#D4AF5A] text-[#F7F4EC] flex items-start gap-3">
+                    <Users className="w-4 h-4 text-[#D4AF5A] shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="text-xs block text-[#F7F4EC]">Team Entry (2–4 Members)</strong>
+                      <span className="text-[10px] text-[#C4CFDD]">Cross-college and cross-stream teams are welcome. Assemble your team of 2–4 members.</span>
+                    </div>
                   </div>
                 </div>
 
@@ -973,12 +964,12 @@ export default function RegisterPage() {
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                   <div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#D4AF5A]">
-                      Fee Applicable for Your Category
+                      Registration Fee per Team
                     </span>
                     <h3 className="font-serif text-2xl font-bold text-[#F7F4EC] mt-0.5">
-                      ₹{calculatedFee}{' '}
+                      ₹500{' '}
                       <span className="text-xs font-normal text-[#C4CFDD]">
-                        ({formData.participantCategory || 'Other Institute Student'})
+                        (Flat fee for team of 2–4 members)
                       </span>
                     </h3>
                   </div>
@@ -1181,7 +1172,7 @@ export default function RegisterPage() {
                     className="mt-1 rounded bg-[#041126] border-[#18335D] text-[#D4AF5A] focus:ring-[#D4AF5A]"
                   />
                   <label htmlFor="agree-rules" className="text-[11px] text-[#C4CFDD] leading-relaxed cursor-pointer">
-                    I agree to the official competition guidelines of ESSENCE 2027 and acknowledge that registration
+                    I agree to the official Code of Conduct and competition guidelines of ESSENCE and acknowledge that registration
                     acceptance is subject to UTR payment verification by the CiEL accounts desk.
                   </label>
                 </div>

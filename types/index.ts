@@ -151,6 +151,7 @@ export interface ProgrammeTimelineEvent {
   dates: string;
   isDateConfirmed: boolean;
   status: 'completed' | 'in_progress' | 'upcoming' | 'open';
+  bulletPoints?: string[];
 }
 
 export interface PrizeCategory {

@@ -44,8 +44,8 @@ export default function FaqPage() {
             Frequently Asked <span className="text-[#D4AF5A]">Questions</span>
           </h1>
           <p className="text-sm sm:text-base text-[#C4CFDD] leading-relaxed">
-            Everything you need to know about participating in ESSENCE 2027: from eligibility and team
-            guidelines to evaluation rubrics and prototype requirements.
+            Everything you need to know about participating in ESSENCE: from eligibility and team
+            guidelines to bootcamp schedules and the Grand Finale.
           </p>
         </div>
 

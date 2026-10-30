@@ -1,13 +1,24 @@
 import React from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { ShieldCheck, Target, Award, Rocket, CheckCircle2, Building, ArrowRight } from 'lucide-react';
+import {
+  ShieldCheck,
+  Target,
+  Rocket,
+  Lightbulb,
+  CheckCircle2,
+  Building,
+  ArrowRight,
+  Eye,
+  Compass,
+  Trophy,
+} from 'lucide-react';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
-  title: 'About ESSENCE 2027 & Chetana’s CiEL',
+  title: 'About ESSENCE · Chetana’s',
   description:
-    'Learn about ESSENCE 2027, an initiative by Chetana’s Centre for Innovation & Entrepreneurship Learning (CiEL) fostering undergraduate innovation across Maharashtra.',
+    'OUR PURPOSE. OUR FUTURE. Learn about ESSENCE, an entrepreneurial competition by Chetana’s R. K. Institute of Management & Research & Institute of Management & Research.',
 };
 
 export default function AboutPage() {
@@ -18,151 +29,145 @@ export default function AboutPage() {
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#102D5C]/60 border border-[#D4AF5A]/30 text-[#D4AF5A] text-xs font-bold uppercase tracking-[0.2em]">
             <ShieldCheck className="w-3.5 h-3.5" />
-            <span>Institutional Background</span>
+            <span>Chetana’s CiEL Presents</span>
           </div>
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight">
-            About <span className="text-[#D4AF5A]">ESSENCE 2027</span>
+            About <span className="text-[#D4AF5A]">ESSENCE</span>
           </h1>
+          <div className="text-xl sm:text-2xl font-serif text-gradient-gold italic">
+            From Ideas to Impact
+          </div>
           <p className="text-sm sm:text-base text-[#C4CFDD] leading-relaxed">
-            Organised by Chetana’s Centre for Innovation &amp; Entrepreneurship Learning (CiEL) to empower
-            undergraduate students across Maharashtra to transform classroom ingenuity into validated,
-            working prototypes.
+            An entrepreneurial competition where innovative ideas compete to become impactful ventures.
+            A startup-building journey for student founders from raw concept to a venture-ready pitch.
           </p>
         </div>
 
-        {/* Section 1: The CiEL Vision */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          <div className="lg:col-span-6 space-y-5">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-[#D4AF5A]">
-              Our Foundation
+        {/* PAGE 2: OUR PURPOSE. OUR FUTURE. */}
+        <div className="royal-card p-8 sm:p-12 rounded-3xl border-[#D4AF5A]/30 bg-gradient-to-br from-[#0B2246] via-[#071A36] to-[#041126] space-y-8 shadow-2xl">
+          <div className="text-center max-w-2xl mx-auto space-y-2">
+            <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#D4AF5A]">
+              PAGE 2 · OUR PURPOSE. OUR FUTURE.
             </span>
-            <h2 className="font-serif text-2xl sm:text-3xl font-medium text-[#F7F4EC]">
-              Chetana’s Centre for Innovation &amp; Entrepreneurship Learning
+            <h2 className="font-serif text-3xl sm:text-4xl font-medium text-[#F7F4EC]">
+              OUR PURPOSE. OUR FUTURE.
             </h2>
-            <p className="text-xs sm:text-sm text-[#C4CFDD] leading-relaxed">
-              Chetana’s CiEL is an academic innovation incubator established within Chetana’s Trust in Bandra (East),
-              Mumbai. Founded with the mission to cultivate a culture of experiential learning, research-backed innovation,
-              and ethical venture creation, CiEL provides students and young professionals with mentorship, prototyping facilities,
-              and ecosystem linkages.
+            <p className="text-sm font-serif italic text-gradient-gold">
+              The vision that drives innovation and impact.
             </p>
-            <p className="text-xs sm:text-sm text-[#C4CFDD] leading-relaxed">
-              With decades of institutional excellence in management, research, and community service, Chetana’s Trust
-              has envisioned ESSENCE as a premier state-level vehicle for nurturing grassroots undergraduate problem solvers.
-            </p>
-            <div className="pt-2">
-              <a
-                href={siteConfig.institution.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#D4AF5A] hover:underline underline-offset-4"
-              >
-                <span>Visit CiEL Institutional Portal</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 border-t border-[#18335D]">
+            {/* Vision */}
+            <div className="space-y-4 p-6 sm:p-8 rounded-2xl bg-[#041126]/60 border border-[#18335D] hover:border-[#D4AF5A]/40 transition-colors">
+              <div className="flex items-center gap-3 text-[#D4AF5A]">
+                <div className="w-10 h-10 rounded-xl bg-[#102D5C] flex items-center justify-center">
+                  <Eye className="w-5 h-5" />
+                </div>
+                <h3 className="font-serif text-2xl font-bold uppercase tracking-wider text-[#F7F4EC]">
+                  VISION
+                </h3>
+              </div>
+              <p className="text-xs sm:text-sm text-[#C4CFDD] leading-relaxed">
+                {siteConfig.purpose.vision}
+              </p>
+            </div>
+
+            {/* Mission */}
+            <div className="space-y-4 p-6 sm:p-8 rounded-2xl bg-[#041126]/60 border border-[#18335D] hover:border-[#D4AF5A]/40 transition-colors">
+              <div className="flex items-center gap-3 text-[#D4AF5A]">
+                <div className="w-10 h-10 rounded-xl bg-[#102D5C] flex items-center justify-center">
+                  <Compass className="w-5 h-5" />
+                </div>
+                <h3 className="font-serif text-2xl font-bold uppercase tracking-wider text-[#F7F4EC]">
+                  MISSION
+                </h3>
+              </div>
+              <p className="text-xs sm:text-sm text-[#C4CFDD] leading-relaxed">
+                {siteConfig.purpose.mission}
+              </p>
             </div>
           </div>
 
-          <div className="lg:col-span-6 royal-card p-8 rounded-2xl border-[#D4AF5A]/30 space-y-6">
-            <h3 className="font-serif text-xl font-medium text-[#F0D99A] border-b border-[#18335D] pb-3">
-              Institutional Positioning Principles
-            </h3>
-            <ul className="space-y-4 text-xs sm:text-sm text-[#C4CFDD]">
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-[#D4AF5A] shrink-0 mt-0.5" />
-                <span>
-                  <strong>Strictly Undergraduate Focus:</strong> Exclusively dedicated to students enrolled in degree, diploma, and polytechnic programmes across Maharashtra.
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-[#D4AF5A] shrink-0 mt-0.5" />
-                <span>
-                  <strong>Non-Commercial, Merit-Driven:</strong> Free registration with zero equity claims on student intellectual property.
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-[#D4AF5A] shrink-0 mt-0.5" />
-                <span>
-                  <strong>Regional Inclusivity:</strong> Equitable outreach spanning urban centres (Mumbai, Pune, Nagpur) and rural districts across Marathwada, Vidarbha, and Konkan.
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-[#D4AF5A] shrink-0 mt-0.5" />
-                <span>
-                  <strong>Prototypes Over Presentations:</strong> A dedicated focus on functional models, physical or software evidence, and real user testing.
-                </span>
-              </li>
-            </ul>
+          <div className="text-center pt-2 text-xs font-semibold text-[#D4AF5A] uppercase tracking-wider">
+            ESSENCE · FROM IDEAS TO IMPACT
           </div>
         </div>
 
-        {/* Section 2: Why ESSENCE Matters */}
+        {/* PAGE 3: WHAT IS ESSENCE? */}
         <div className="space-y-8">
           <div className="text-center max-w-2xl mx-auto space-y-2">
             <span className="text-[11px] font-bold uppercase tracking-wider text-[#D4AF5A]">
-              The Core Problem
+              PAGE 3 · Startup-Building Journey
             </span>
-            <h2 className="font-serif text-3xl font-medium text-[#F7F4EC]">
-              Why ESSENCE 2027 Was Conceived
+            <h2 className="font-serif text-3xl sm:text-4xl font-medium text-[#F7F4EC]">
+              What is ESSENCE?
             </h2>
+            <div className="text-base sm:text-lg font-serif italic text-gradient-gold">
+              More than a competition. A real startup-building journey.
+            </div>
+            <p className="text-xs sm:text-sm text-[#C4CFDD] leading-relaxed">
+              A startup-building journey for student founders from raw concept to a venture-ready pitch.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="royal-card p-6 rounded-xl space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-[#102D5C] text-[#D4AF5A] flex items-center justify-center">
-                <Target className="w-5 h-5" />
-              </div>
-              <h3 className="font-serif text-lg font-medium text-[#F7F4EC]">The Ideation-Implementation Chasm</h3>
-              <p className="text-xs text-[#C4CFDD] leading-relaxed">
-                Many student projects conclude as theoretical reports submitted for final-semester marks.
-                ESSENCE provides the impetus and structured feedback to translate these ideas into working models.
-              </p>
-            </div>
+            {siteConfig.whatIsEssence.pillars.map((pillar) => (
+              <div
+                key={pillar.number}
+                className="royal-card p-8 rounded-2xl flex flex-col justify-between hover:border-[#D4AF5A]/50 transition-all space-y-4"
+              >
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-serif text-3xl font-bold text-[#D4AF5A]">
+                      {pillar.number}
+                    </span>
+                    <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-[#102D5C] text-[#F0D99A] border border-[#D4AF5A]/30">
+                      Phase {pillar.number}
+                    </span>
+                  </div>
 
-            <div className="royal-card p-6 rounded-xl space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-[#102D5C] text-[#D4AF5A] flex items-center justify-center">
-                <Award className="w-5 h-5" />
-              </div>
-              <h3 className="font-serif text-lg font-medium text-[#F7F4EC]">Multidisciplinary Team Dynamics</h3>
-              <p className="text-xs text-[#C4CFDD] leading-relaxed">
-                Engineering students build technology; management and design students understand market viability and user empathy.
-                ESSENCE fosters cross-disciplinary collaboration.
-              </p>
-            </div>
+                  <h3 className="font-serif text-xl font-bold text-[#F7F4EC]">
+                    {pillar.heading}
+                  </h3>
 
-            <div className="royal-card p-6 rounded-xl space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-[#102D5C] text-[#D4AF5A] flex items-center justify-center">
-                <Rocket className="w-5 h-5" />
+                  <p className="text-xs sm:text-sm font-semibold text-[#F0D99A] leading-relaxed">
+                    {pillar.summary}
+                  </p>
+
+                  <p className="text-xs text-[#C4CFDD] leading-relaxed">
+                    {pillar.description}
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-[#18335D]/70 text-[11px] text-[#68758A]">
+                  ESSENCE · FROM IDEAS TO IMPACT
+                </div>
               </div>
-              <h3 className="font-serif text-lg font-medium text-[#F7F4EC]">Post-Competition Incubation</h3>
-              <p className="text-xs text-[#C4CFDD] leading-relaxed">
-                Unlike short hackathons that end at prize distribution, ESSENCE finalists gain direct access
-                to Chetana’s CiEL incubation mentorship, patent advisory, and seed progression reviews.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
 
-        {/* Section 3: Campus Host & Location */}
-        <div className="royal-card p-8 rounded-2xl border-[#D4AF5A]/30 flex flex-col md:flex-row items-center justify-between gap-8">
+        {/* Institutional Host & Venue */}
+        <div className="royal-card p-8 sm:p-10 rounded-2xl border-[#D4AF5A]/30 flex flex-col md:flex-row items-center justify-between gap-8 bg-gradient-to-r from-[#071A36] to-[#041126]">
           <div className="space-y-3 max-w-2xl">
             <div className="flex items-center gap-2 text-[#D4AF5A]">
               <Building className="w-5 h-5" />
-              <span className="text-xs font-bold uppercase tracking-wider">Host Campus &amp; Finale Venue</span>
+              <span className="text-xs font-bold uppercase tracking-wider">Host Institutions &amp; Venue</span>
             </div>
             <h3 className="font-serif text-2xl font-medium text-[#F7F4EC]">
-              Chetana’s Campus, Bandra (East), Mumbai
+              Chetana’s R. K. Institute of Management &amp; Research &amp; Institute of Management &amp; Research
             </h3>
             <p className="text-xs sm:text-sm text-[#C4CFDD] leading-relaxed">
-              Centrally situated in Mumbai’s prominent educational and institutional corridor, Chetana’s campus
-              features modern auditoriums, innovation lab spaces, and the open central plaza that will house
-              the 100-stall Maharashtra Innovation Exhibition during the Grand Finale.
+              Main event will take place on <strong>21–22 December at 10:00 AM</strong> in{' '}
+              <strong>Chetana’s Auditorium</strong>, Bandra (East), Mumbai.
             </p>
           </div>
           <Link
-            href="/contact"
-            className="px-6 py-3 rounded-lg text-xs font-bold text-[#041126] bg-[#D4AF5A] hover:bg-[#F0D99A] transition-colors shrink-0 shadow"
+            href="/register"
+            className="px-8 py-3.5 rounded-lg text-xs font-bold text-[#041126] bg-[#D4AF5A] hover:bg-[#F0D99A] transition-colors shrink-0 shadow"
           >
-            Contact Organisers &amp; Campus Desk
+            Register Your Team
           </Link>
         </div>
       </div>
