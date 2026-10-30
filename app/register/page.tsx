@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import {
   Sparkles,
@@ -45,53 +45,63 @@ export default function RegisterPage() {
     isSimulation?: boolean;
   } | null>(null);
 
-  // Form State with Lazy Initialization
-  const [formData, setFormData] = useState<RegistrationFormData>(() => {
-    let initialTrack = 'ai-ml';
-    let isOtherTrack = false;
+  // Form State initialized cleanly to prevent SSR hydration mismatch
+  const [formData, setFormData] = useState<RegistrationFormData>(initialRegistrationFormData);
 
-    if (typeof window !== 'undefined') {
+  // Safe client-side draft restoration & query param reader
+  useEffect(() => {
+    try {
       const params = new URLSearchParams(window.location.search);
       const trackParam = params.get('track');
+      let initialTrack = 'ai-ml';
+      let customTrack = '';
+
       if (trackParam) {
         if (trackParam === 'other') {
           initialTrack = 'other';
-          isOtherTrack = true;
+          customTrack = 'Interdisciplinary';
         } else {
           initialTrack = trackParam;
         }
       }
 
-      // Restore saved local draft if available
-      try {
-        const savedDraft = localStorage.getItem('essence_registration_draft');
-        if (savedDraft) {
-          const parsed = JSON.parse(savedDraft);
-          return {
-            ...initialRegistrationFormData,
-            ...parsed,
-            innovationTrack: trackParam ? initialTrack : parsed.innovationTrack || initialTrack,
-          };
-        }
-      } catch {
-        // Fall back to defaults on parse failure
+      const savedDraft = localStorage.getItem('essence_registration_draft');
+      if (savedDraft) {
+        const parsed = JSON.parse(savedDraft);
+        setFormData({
+          ...initialRegistrationFormData,
+          ...parsed,
+          innovationTrack: trackParam ? initialTrack : (parsed.innovationTrack || initialTrack),
+          customTrackName: customTrack || parsed.customTrackName || '',
+        });
+        return;
       }
+
+      if (trackParam) {
+        setFormData((prev) => ({
+          ...prev,
+          innovationTrack: initialTrack,
+          customTrackName: customTrack,
+        }));
+      }
+    } catch {
+      // Ignore client storage parse errors
     }
+  }, []);
 
-    return {
-      ...initialRegistrationFormData,
-      innovationTrack: initialTrack,
-      customTrackName: isOtherTrack ? 'Interdisciplinary' : '',
-    };
-  });
-
-  // Registration Fee is fixed at ₹500 per team (from official brochure)
-  const calculatedFee = registrationConfig.feeStructure.teamFee || 500;
+  // Registration Fee: ₹200 for Chetana students, ₹500 for other colleges
+  const isChetana = formData.participantCategory === 'Chetana Institute Student';
+  const calculatedFee = isChetana ? 200 : (registrationConfig.feeStructure.teamFee || 500);
 
   // Update form data and sync to draft storage
   const updateForm = (fields: Partial<RegistrationFormData>) => {
     setFormData((prev) => {
-      const updated = { ...prev, ...fields, registrationFee: calculatedFee };
+      const isChet = fields.participantCategory !== undefined
+        ? fields.participantCategory === 'Chetana Institute Student'
+        : prev.participantCategory === 'Chetana Institute Student';
+      const fee = isChet ? 200 : (registrationConfig.feeStructure.teamFee || 500);
+
+      const updated = { ...prev, ...fields, registrationFee: fee };
       if (typeof window !== 'undefined') {
         try {
           localStorage.setItem('essence_registration_draft', JSON.stringify(updated));
@@ -343,13 +353,18 @@ export default function RegisterPage() {
                   </button>
                 </div>
               </div>
+            </div>
 
-              <div className="text-left sm:text-right">
-                <span className="text-[11px] font-medium text-[#68758A] block">Payment Status</span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold mt-1">
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                  <span>Pending UTR Verification</span>
-                </span>
+            {/* Payment Confirmation Notice */}
+            <div className="p-4 rounded-xl bg-[#102D5C]/60 border border-[#D4AF5A]/40 flex items-start gap-3">
+              <div className="w-8 h-8 rounded-lg bg-[#D4AF5A]/20 text-[#D4AF5A] flex items-center justify-center shrink-0 mt-0.5">
+                <Mail className="w-4 h-4" />
+              </div>
+              <div className="space-y-0.5 text-xs leading-relaxed">
+                <strong className="text-[#F0D99A] font-semibold block text-sm">Payment Confirmation</strong>
+                <p className="text-[#F7F4EC]">
+                  A confirmation email will be sent once your payment has been successfully verified.
+                </p>
               </div>
             </div>
 
@@ -480,7 +495,7 @@ export default function RegisterPage() {
               Team Size: <strong className="text-[#F7F4EC]">2–4 People</strong>
             </span>
             <span className="px-3 py-1 rounded-full bg-[#102D5C]/70 border border-[#D4AF5A]/30">
-              Fee: <strong className="text-[#D4AF5A]">₹500 / team</strong>
+              Fee: <strong className="text-[#D4AF5A]">₹500 / team (₹200 for Chetana)</strong>
             </span>
             <span className="px-3 py-1 rounded-full bg-[#102D5C]/70 border border-[#D4AF5A]/30">
               Last Date: <strong className="text-[#F7F4EC]">26 Nov</strong>
@@ -616,7 +631,7 @@ export default function RegisterPage() {
                       <Building className="w-4 h-4 text-[#D4AF5A] shrink-0 mt-0.5" />
                       <div>
                         <strong className="text-xs block text-[#F7F4EC]">Chetana Institute Student</strong>
-                        <span className="text-[10px] text-[#C4CFDD]">CIMR / CRKIMR student team (₹500 per team)</span>
+                        <span className="text-[10px] text-[#F0D99A] font-semibold">CIMR / CRKIMR team (₹200 per team)</span>
                       </div>
                     </button>
 
@@ -964,19 +979,30 @@ export default function RegisterPage() {
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                   <div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#D4AF5A]">
-                      Registration Fee per Team
+                      Registration Fee ({isChetana ? 'Chetana Student Rate' : 'Standard Rate'})
                     </span>
                     <h3 className="font-serif text-2xl font-bold text-[#F7F4EC] mt-0.5">
-                      ₹500{' '}
+                      ₹{calculatedFee}{' '}
                       <span className="text-xs font-normal text-[#C4CFDD]">
-                        (Flat fee for team of 2–4 members)
+                        {isChetana
+                          ? '(Chetana Student Rate · Team of 2–4 members)'
+                          : '(Standard Institutional Rate · Team of 2–4 members)'}
                       </span>
                     </h3>
                   </div>
 
                   <span className="px-3 py-1 rounded-full bg-[#D4AF5A]/10 border border-[#D4AF5A]/30 text-[#D4AF5A] text-xs font-semibold">
-                    Fixed Institutional Rate
+                    {isChetana ? '₹200 Chetana Rate' : '₹500 Team Rate'}
                   </span>
+                </div>
+
+                {/* Official Payment Confirmation Notice */}
+                <div className="p-3.5 rounded-xl bg-[#041126]/90 border border-[#D4AF5A]/40 text-xs text-[#F0D99A] flex items-start gap-2.5">
+                  <Mail className="w-4 h-4 text-[#D4AF5A] shrink-0 mt-0.5" />
+                  <div className="leading-relaxed">
+                    <strong className="text-[#F7F4EC] block font-semibold">Payment Confirmation:</strong>
+                    <span>A confirmation email will be sent once your payment has been successfully verified.</span>
+                  </div>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-[#041126]/80 border border-[#18335D] space-y-2 text-xs">

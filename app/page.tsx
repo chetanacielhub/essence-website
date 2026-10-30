@@ -6,10 +6,8 @@ import TracksSection from '@/components/home/TracksSection';
 import JourneySection from '@/components/home/JourneySection';
 import AwardsSection from '@/components/home/AwardsSection';
 import WhyParticipateSection from '@/components/home/WhyParticipateSection';
-import ShowcaseSection from '@/components/home/ShowcaseSection';
 import MentorshipModelSection from '@/components/home/MentorshipModelSection';
-import CollegesSection from '@/components/home/CollegesSection';
-import FaqPreviewSection from '@/components/home/FaqPreviewSection';
+import FaqSection from '@/components/home/FaqSection';
 import FinalCtaSection from '@/components/home/FinalCtaSection';
 
 export default function HomePage() {
@@ -22,10 +20,8 @@ export default function HomePage() {
       <JourneySection />
       <AwardsSection />
       <WhyParticipateSection />
-      <ShowcaseSection />
       <MentorshipModelSection />
-      <CollegesSection />
-      <FaqPreviewSection />
+      <FaqSection />
       <FinalCtaSection />
     </div>
   );

@@ -37,9 +37,14 @@ export default function AboutSection() {
         {/* Top Part: PAGE 2 – OUR PURPOSE. OUR FUTURE. */}
         <div className="royal-card p-8 sm:p-10 rounded-2xl border-[#D4AF5A]/30 relative overflow-hidden bg-gradient-to-br from-[#0B2246] via-[#071A36] to-[#041126]">
           <div className="max-w-3xl space-y-3 mb-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#102D5C]/70 border border-[#D4AF5A]/30 text-[#D4AF5A] text-xs font-bold uppercase tracking-[0.2em]">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>{siteConfig.purpose.title}</span>
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#102D5C] border border-[#D4AF5A]/40 text-[#D4AF5A] text-xs font-bold uppercase tracking-[0.2em]">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Chetana’s CiEL Presents</span>
+              </div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#102D5C]/70 border border-[#D4AF5A]/30 text-[#F0D99A] text-xs font-bold uppercase tracking-[0.2em]">
+                <span>{siteConfig.purpose.title}</span>
+              </div>
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium text-[#F7F4EC]">
               {siteConfig.purpose.subtitle}

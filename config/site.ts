@@ -37,10 +37,9 @@ export const siteConfig = {
   // Official Registration & Event Details (from Brochure)
   registrationDetails: {
     teamSize: "2–4 people",
-    minTeamSize: 2,
-    maxTeamSize: 4,
-    registrationFee: "₹500 per team",
+    registrationFee: "₹500 per team (₹200 for Chetana students)",
     registrationFeeAmount: 500,
+    chetanaFeeAmount: 200,
     lastDate: "26 November",
     bootcampDate: "28 November",
     mainEventDate: "21–22 December",
@@ -226,13 +225,14 @@ export const siteConfig = {
   navItems: [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
-    { label: "Journey", href: "/journey" },
     { label: "Tracks", href: "/tracks" },
-    { label: "Timeline", href: "/timeline" },
+    { label: "Journey", href: "/journey" },
     { label: "Awards", href: "/awards" },
-    { label: "Showcase", href: "/showcase" },
-    { label: "Colleges", href: "/colleges" },
+    { label: "Timeline", href: "/timeline" },
+    { label: "Eligibility", href: "/eligibility" },
+    { label: "Rules", href: "/rules" },
     { label: "FAQ", href: "/faq" },
+    { label: "Contact", href: "/contact" },
   ],
   footerLinks: {
     competition: [
@@ -246,9 +246,8 @@ export const siteConfig = {
     participate: [
       { label: "Register Your Team", href: "/register" },
       { label: "Participant Login", href: "/login" },
-      { label: "Prototype Showcase", href: "/showcase" },
+      { label: "Frequently Asked Questions", href: "/faq" },
       { label: "Mentorship Model", href: "/mentorship" },
-      { label: "College Partners", href: "/colleges" },
       { label: "Finalists Archive", href: "/finalists" },
     ],
     institution: [
@@ -532,7 +531,14 @@ export const faqList: FAQItem[] = [
     category: "Teams & Registration",
     question: "What is the registration fee?",
     answer:
-      "The registration fee is ₹500 per team. Registration closes on 26 November.",
+      "The registration fee is ₹500 per team for external institutions, and ₹200 for Chetana students. Registration closes on 26 November.",
+  },
+  {
+    id: "faq-3b",
+    category: "Teams & Registration",
+    question: "How will I know if my payment is confirmed?",
+    answer:
+      "Payment Confirmation: A confirmation email will be sent once your payment has been successfully verified by our accounts desk. Please ensure your UTR / UPI Transaction Reference Number is entered accurately during registration.",
   },
   {
     id: "faq-4",

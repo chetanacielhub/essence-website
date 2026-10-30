@@ -137,20 +137,6 @@ export default function TracksPage() {
                       </p>
                     </div>
                   </div>
-
-                  <div className="pt-5 border-t border-[#18335D]/60 mt-4 flex items-center justify-between">
-                    <span className="text-[10px] uppercase font-semibold text-[#68758A] tracking-wider">
-                      Suggested Domain
-                    </span>
-                    <Link
-                      href={`/register?track=${track.id}`}
-                      className="inline-flex items-center gap-1 text-xs font-semibold text-[#D4AF5A] hover:text-[#F0D99A] group/link focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF5A] rounded px-1 -mx-1"
-                      aria-label={`Submit an idea in ${track.name}`}
-                    >
-                      <span>Explore &amp; Submit</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
-                    </Link>
-                  </div>
                 </div>
               );
             })}

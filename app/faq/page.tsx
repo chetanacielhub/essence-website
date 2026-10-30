@@ -77,6 +77,19 @@ export default function FaqPage() {
               </button>
             ))}
           </div>
+
+          {/* Payment Confirmation Banner */}
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#102D5C]/40 border border-[#D4AF5A]/30 flex flex-col sm:flex-row items-start sm:items-center gap-3.5">
+            <div className="w-9 h-9 rounded-xl bg-[#D4AF5A]/15 text-[#D4AF5A] border border-[#D4AF5A]/30 flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-4 h-4" />
+            </div>
+            <div className="space-y-0.5 text-xs text-[#C4CFDD] leading-relaxed">
+              <strong className="text-[#F0D99A] block font-semibold">Payment Confirmation Guarantee:</strong>
+              <span>
+                A confirmation email will be sent once your payment has been successfully verified by our accounts desk.
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* FAQs Accordion */}

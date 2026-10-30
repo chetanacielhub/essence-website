@@ -95,10 +95,10 @@ export default function TracksSection() {
                   )}
                 </div>
 
-                <div className="pt-6 border-t border-[#18335D]/60 mt-6 flex items-center justify-between">
+                <div className="pt-4 border-t border-[#18335D]/60 mt-6 flex items-center justify-between">
                   <button
                     onClick={() => toggleTrack(track.id)}
-                    className="text-xs text-[#C4CFDD] hover:text-[#F7F4EC] inline-flex items-center gap-1 font-medium"
+                    className="text-xs text-[#C4CFDD] hover:text-[#D4AF5A] inline-flex items-center gap-1 font-medium transition-colors"
                   >
                     <span>{isExpanded ? 'Hide Prompts' : 'View Prompts'}</span>
                     <ChevronDown
@@ -107,14 +107,9 @@ export default function TracksSection() {
                       }`}
                     />
                   </button>
-
-                  <Link
-                    href={`/register?track=${track.slug}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#D4AF5A] hover:text-[#F0D99A] group/link"
-                  >
-                    <span>Submit to Track</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
-                  </Link>
+                  <span className="text-[10px] uppercase font-semibold text-[#68758A] tracking-wider">
+                    Track 0{track.sortOrder}
+                  </span>
                 </div>
               </div>
             );

@@ -78,10 +78,10 @@ export default function Navbar() {
           </nav>
 
           {/* Right-Side Action CTAs */}
-          <div className="hidden md:flex items-center space-x-3">
+          <div className="hidden md:flex items-center space-x-3 relative z-10">
             <Link
               href="/login"
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium text-[#C4CFDD] hover:text-[#F7F4EC] transition-colors rounded-md hover:bg-[#102D5C]/30 border border-transparent hover:border-[#D4AF5A]/20"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium text-[#C4CFDD] hover:text-[#F7F4EC] transition-colors rounded-md hover:bg-[#102D5C]/30 border border-transparent hover:border-[#D4AF5A]/20 cursor-pointer"
             >
               <User className="w-3.5 h-3.5 text-[#D4AF5A]" />
               <span>Login</span>
@@ -89,7 +89,7 @@ export default function Navbar() {
 
             <Link
               href="/register"
-              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-md text-[#041126] bg-gradient-to-r from-[#F0D99A] via-[#D4AF5A] to-[#B8923F] hover:opacity-95 shadow-md shadow-[#D4AF5A]/15 transition-all transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-md text-[#041126] bg-gradient-to-r from-[#F0D99A] via-[#D4AF5A] to-[#B8923F] hover:opacity-95 shadow-md shadow-[#D4AF5A]/15 transition-all transform hover:-translate-y-0.5 cursor-pointer relative z-10"
             >
               <Sparkles className="w-3.5 h-3.5" />
               <span>Register Now</span>

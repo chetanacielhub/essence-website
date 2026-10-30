@@ -77,10 +77,19 @@ export default function ProgrammeIndicators() {
                   </span>
                 </div>
                 <div>
-                  <div className="font-serif text-2xl sm:text-2xl font-bold text-[#F7F4EC] tracking-tight group-hover:text-[#F0D99A] transition-colors truncate">
-                    {item.value}
+                  <div className="font-serif text-lg sm:text-xl font-bold text-[#F7F4EC] tracking-tight group-hover:text-[#F0D99A] transition-colors leading-tight">
+                    {item.label === 'Registration Fee' ? (
+                      <>
+                        <span>₹500</span>
+                        <span className="text-[10px] font-normal text-[#C4CFDD] block mt-0.5">
+                          (₹200 for Chetana)
+                        </span>
+                      </>
+                    ) : (
+                      item.value
+                    )}
                   </div>
-                  <div className="text-xs font-semibold text-[#D4AF5A] pt-0.5">
+                  <div className="text-xs font-semibold text-[#D4AF5A] pt-1">
                     {item.label}
                   </div>
                   <p className="text-[10px] text-[#C4CFDD]/70 pt-1 leading-snug">
