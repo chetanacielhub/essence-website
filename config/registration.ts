@@ -25,7 +25,7 @@ export interface RegistrationConfig {
 export const registrationConfig: RegistrationConfig = {
   feeStructure: {
     teamFee: 500,
-    chetanaStudentFee: 200,
+    chetanaStudentFee: 500,
     otherCollegeFee: 500,
     currency: 'INR',
     upiId: 'ciel.essence@okhdfcbank',
@@ -42,7 +42,7 @@ export const registrationConfig: RegistrationConfig = {
     {
       id: 'chetana',
       label: 'Chetana Institute Student',
-      fee: 200,
+      fee: 500,
     },
     {
       id: 'other',

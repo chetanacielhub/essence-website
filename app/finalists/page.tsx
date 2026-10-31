@@ -61,13 +61,15 @@ export default function FinalistsPage() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-              <Link
-                href="/login"
+              <a
+                href="https://forms.gle/yc2N7X9JAfCUsGeB6"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg text-xs font-bold text-[#041126] bg-[#D4AF5A] hover:bg-[#F0D99A] transition-colors"
               >
-                <span>Check Your Submission Dashboard</span>
+                <span>Register Your Team (Google Form)</span>
                 <ArrowRight className="w-4 h-4" />
-              </Link>
+              </a>
               <Link
                 href="/showcase"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-xs font-medium text-[#C4CFDD] bg-[#0A1E3D] border border-[#18335D] hover:text-[#F7F4EC]"

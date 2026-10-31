@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Sparkles, User, ShieldCheck } from 'lucide-react';
+import { Menu, X, Sparkles } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 
 export default function Navbar() {
@@ -79,31 +79,27 @@ export default function Navbar() {
 
           {/* Right-Side Action CTAs */}
           <div className="hidden md:flex items-center space-x-3 relative z-10">
-            <Link
-              href="/login"
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium text-[#C4CFDD] hover:text-[#F7F4EC] transition-colors rounded-md hover:bg-[#102D5C]/30 border border-transparent hover:border-[#D4AF5A]/20 cursor-pointer"
-            >
-              <User className="w-3.5 h-3.5 text-[#D4AF5A]" />
-              <span>Login</span>
-            </Link>
-
-            <Link
-              href="/register"
+            <a
+              href="https://forms.gle/yc2N7X9JAfCUsGeB6"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-md text-[#041126] bg-gradient-to-r from-[#F0D99A] via-[#D4AF5A] to-[#B8923F] hover:opacity-95 shadow-md shadow-[#D4AF5A]/15 transition-all transform hover:-translate-y-0.5 cursor-pointer relative z-10"
             >
               <Sparkles className="w-3.5 h-3.5" />
               <span>Register Now</span>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
-            <Link
-              href="/register"
+            <a
+              href="https://forms.gle/yc2N7X9JAfCUsGeB6"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-3 py-1.5 text-xs font-semibold rounded text-[#041126] bg-[#D4AF5A]"
             >
               Register
-            </Link>
+            </a>
             <button
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? 'Close Menu' : 'Open Navigation Menu'}
@@ -139,28 +135,15 @@ export default function Navbar() {
           </div>
 
           <div className="pt-2 flex flex-col gap-2">
-            <div className="flex gap-2">
-              <Link
-                href="/login"
-                className="flex-1 text-center py-2 text-xs font-medium text-[#C4CFDD] bg-[#0A1E3D] border border-[#D4AF5A]/20 rounded-md hover:bg-[#102D5C]/40"
-              >
-                Sign In
-              </Link>
-              <Link
-                href="/admin"
-                className="px-3 py-2 text-xs font-medium text-[#D4AF5A] bg-[#0A1E3D] border border-[#D4AF5A]/20 rounded-md hover:bg-[#102D5C]/40 flex items-center justify-center gap-1"
-                title="Admin Portal"
-              >
-                <ShieldCheck className="w-3.5 h-3.5" />
-                <span>Admin</span>
-              </Link>
-            </div>
-            <Link
-              href="/register"
-              className="text-center py-2.5 text-xs font-bold text-[#041126] bg-gradient-to-r from-[#F0D99A] via-[#D4AF5A] to-[#B8923F] rounded-md shadow"
+            <a
+              href="https://forms.gle/yc2N7X9JAfCUsGeB6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-center py-2.5 text-xs font-bold text-[#041126] bg-gradient-to-r from-[#F0D99A] via-[#D4AF5A] to-[#B8923F] rounded-md shadow flex items-center justify-center gap-1.5"
             >
-              Register for ESSENCE
-            </Link>
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Register for ESSENCE (Google Form)</span>
+            </a>
           </div>
         </div>
       )}

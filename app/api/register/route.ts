@@ -121,7 +121,7 @@ export async function POST(req: NextRequest) {
       projectSummary: sanitizeInput(body.projectSummary || body.problemStatement),
       pptUrlOrFileName: sanitizeInput(body.pptUrlOrFileName || ''),
       pptBase64: body.pptBase64 || '',
-      registrationFee: Number(body.registrationFee) || (body.participantCategory === 'Chetana Institute Student' ? 200 : 500),
+      registrationFee: Number(body.registrationFee) || 500,
       utrTransactionNumber: sanitizeInput(body.utrTransactionNumber),
       paymentReceiptUrlOrFileName: sanitizeInput(body.paymentReceiptUrlOrFileName || ''),
       paymentReceiptBase64: body.paymentReceiptBase64 || '',

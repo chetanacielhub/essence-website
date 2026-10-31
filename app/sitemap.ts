@@ -21,7 +21,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/privacy',
     '/terms',
     '/register',
-    '/login',
   ];
 
   const now = new Date('2026-10-28T00:00:00Z');

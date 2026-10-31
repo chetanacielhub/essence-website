@@ -37,16 +37,16 @@ export const siteConfig = {
   // Official Registration & Event Details (from Brochure)
   registrationDetails: {
     teamSize: "2–4 people",
-    registrationFee: "₹500 per team (₹200 for Chetana students)",
+    registrationFee: "₹500 per team",
     registrationFeeAmount: 500,
-    chetanaFeeAmount: 200,
     lastDate: "26 November",
     bootcampDate: "28 November",
     mainEventDate: "21–22 December",
     time: "10:00 AM",
     venue: "Chetana’s Auditorium",
-    grandFundPool: "₹1.5 Lakh",
+    googleFormUrl: "https://forms.gle/yc2N7X9JAfCUsGeB6",
   },
+  googleFormUrl: "https://forms.gle/yc2N7X9JAfCUsGeB6",
   // Purpose, Vision & Mission (PAGE 2)
   purpose: {
     title: "OUR PURPOSE. OUR FUTURE.",
@@ -225,7 +225,7 @@ export const siteConfig = {
   navItems: [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
-    { label: "Tracks", href: "/tracks" },
+    { label: "Domains", href: "/tracks" },
     { label: "Journey", href: "/journey" },
     { label: "Awards", href: "/awards" },
     { label: "Timeline", href: "/timeline" },
@@ -237,15 +237,14 @@ export const siteConfig = {
   footerLinks: {
     competition: [
       { label: "Competition Journey", href: "/journey" },
-      { label: "Innovation Tracks", href: "/tracks" },
+      { label: "Discovery Domains", href: "/tracks" },
+      { label: "Awards & Fund Pool", href: "/awards" },
       { label: "Who Can Join", href: "/eligibility" },
       { label: "Code of Conduct", href: "/rules" },
       { label: "Official Timeline", href: "/timeline" },
-      { label: "Awards & Pool", href: "/awards" },
     ],
     participate: [
       { label: "Register Your Team", href: "/register" },
-      { label: "Participant Login", href: "/login" },
       { label: "Frequently Asked Questions", href: "/faq" },
       { label: "Mentorship Model", href: "/mentorship" },
       { label: "Finalists Archive", href: "/finalists" },
@@ -466,50 +465,7 @@ export const competitionStages: ProgrammeTimelineEvent[] = [
   },
 ];
 
-export const prizeCategories: PrizeCategory[] = [
-  {
-    id: "grand-champion",
-    title: "ESSENCE Grand Winner",
-    award: "State Innovation Trophy & Cash Grant",
-    amount: 75000,
-    description: "Conferred on the highest-scoring venture demonstrating exceptional innovation, validated business model, and high scalability potential.",
-    badgeText: "Fund Grant: ₹75,000",
-    benefits: [
-      "Funding opportunity from ₹1.5 Lakh grand pool",
-      "Direct incubation review at Chetana's CiEL",
-      "Executive mentorship by veteran startup founders",
-      "Official Winner Citation and Trophy",
-    ],
-  },
-  {
-    id: "first-runner-up",
-    title: "First Runner-Up",
-    award: "Excellence Trophy & Cash Grant",
-    amount: 45000,
-    description: "Awarded to the outstanding runner-up team with strong prototype validation, market research, and high impact viability.",
-    badgeText: "Fund Grant: ₹45,000",
-    benefits: [
-      "Funding opportunity from ₹1.5 Lakh grand pool",
-      "Fast-track incubation review access",
-      "Official Runner-Up Citation & Trophy",
-      "Domain mentor network pairing",
-    ],
-  },
-  {
-    id: "second-runner-up",
-    title: "Second Runner-Up & Citations",
-    award: "Special Commendation & Grant",
-    amount: 30000,
-    description: "Recognising remarkable student creativity, functional prototype execution, and social/economic impact potential.",
-    badgeText: "Fund Grant: ₹30,000",
-    benefits: [
-      "Funding opportunity from ₹1.5 Lakh grand pool",
-      "Ecosystem mentorship linkage",
-      "Official Commendation Certificate & Plaque",
-      "GTM guidance from CiEL advisors",
-    ],
-  },
-];
+export const prizeCategories: PrizeCategory[] = [];
 
 export const faqList: FAQItem[] = [
   {
@@ -531,7 +487,7 @@ export const faqList: FAQItem[] = [
     category: "Teams & Registration",
     question: "What is the registration fee?",
     answer:
-      "The registration fee is ₹500 per team for external institutions, and ₹200 for Chetana students. Registration closes on 26 November.",
+      "The registration fee is ₹500 per team. Registration closes on 26 November.",
   },
   {
     id: "faq-3b",

@@ -20,7 +20,7 @@ This document defines the exact column structure of the master registration Goog
 | 5 | **E** | `Team Leader Name` | Text | Free text (sanitized) | Full name of the primary applicant / team leader. |
 | 6 | **F** | `Team Leader Email` | Email | `user@domain.com` | Official email address for all notifications. |
 | 7 | **G** | `Team Leader Contact` | Text | 10-digit mobile number | WhatsApp / phone contact. |
-| 8 | **H** | `Participant Category` | Text | `Chetana Institute Student`<br>`Other Institute Student` | Used to verify fee tier (₹200 vs ₹500). |
+| 8 | **H** | `Participant Category` | Text | `Chetana Institute Student`<br>`Other Institute Student` | Used to verify institutional affiliation. |
 | 9 | **I** | `College / Institute` | Text | Free text | Affiliated college name. |
 | 10 | **J** | `Course / Programme` | Text | `B.Tech / B.E.`, `BMS`, etc. | Academic degree stream. |
 | 11 | **K** | `Pursuing Level` | Text | `Under-Graduate`<br>`Post-Graduate`<br>`Other` | Degree category. |
@@ -40,7 +40,7 @@ This document defines the exact column structure of the master registration Goog
 | 25 | **Y** | `Proposed Solution` | Text | Paragraph | Proposed technical / entrepreneurial solution. |
 | 26 | **Z** | `Project Summary` | Text | Paragraph | Executive summary of idea and prototype plan. |
 | 27 | **AA** | `Pitch Deck / PPT Link` | URL / Drive Link | Valid URL | Link to deck or uploaded Drive file. |
-| 28 | **AB** | `Fee Paid (INR)` | Number | `200` or `500` | Registration fee expected based on category. |
+| 28 | **AB** | `Fee Paid (INR)` | Number | `500` | Registration fee expected per team (₹500). |
 | 29 | **AC** | `UTR / Transaction No.` | Text | Bank UTR (e.g., `4289XXXXXXXX`) | Bank reference for fee reconciliation. |
 | 30 | **AD** | `Payment Receipt Link` | URL / Drive Link | Valid URL | Link to screenshot / receipt. |
 | 31 | **AE** | `Idempotency Key` | Text | UUID / Hash | Prevents accidental duplicate submissions. |
