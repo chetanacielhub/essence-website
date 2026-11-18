@@ -27,7 +27,7 @@ export default function Footer() {
                 Chetana’s
               </span>
               <div className="text-xs text-[#C4CFDD] font-serif">
-                R. K. Institute of Management &amp; Research &amp; Institute of Management &amp; Research
+                R. K. Institute of Management &amp; Research, Institute of Management &amp; Research and Chetana H.S College
               </div>
               <div className="font-serif text-3xl font-medium text-[#F7F4EC] tracking-tight pt-1">
                 ESSENCE
@@ -154,7 +154,7 @@ export default function Footer() {
         {/* Bottom Credits & Copyright */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-[#68758A] gap-4">
           <p>
-            &copy; {currentYear} Chetana&apos;s · R. K. Institute of Management &amp; Research &amp; Institute of Management &amp; Research. All rights reserved.
+            &copy; {currentYear} Chetana&apos;s · R. K. Institute of Management &amp; Research, Institute of Management &amp; Research and Chetana H.S College. All rights reserved.
           </p>
           <div className="flex items-center space-x-6 text-[11px]">
             <Link href="/privacy" className="hover:text-[#C4CFDD] transition-colors">

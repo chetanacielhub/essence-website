@@ -44,6 +44,7 @@ export const metadata: Metadata = {
     'Chetana CiEL',
     'Chetana R. K. Institute of Management & Research',
     'Institute of Management & Research',
+    'Chetana H.S College',
     'student entrepreneurship',
     'startup competition',
     'Grand Fund Pool ₹1.5 Lakh',

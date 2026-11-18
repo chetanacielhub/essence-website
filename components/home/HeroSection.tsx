@@ -18,7 +18,7 @@ export default function HeroSection() {
             <span>Chetana’s</span>
           </div>
           <div className="text-xs sm:text-sm font-serif tracking-wider text-[#C4CFDD]">
-            R. K. Institute of Management &amp; Research &amp; Institute of Management &amp; Research
+            R. K. Institute of Management &amp; Research, Institute of Management &amp; Research and Chetana H.S College
           </div>
         </div>
 

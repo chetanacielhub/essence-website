@@ -18,7 +18,7 @@ import { siteConfig } from '@/config/site';
 export const metadata: Metadata = {
   title: 'About ESSENCE · Chetana’s',
   description:
-    'OUR PURPOSE. OUR FUTURE. Learn about ESSENCE, an entrepreneurial competition by Chetana’s R. K. Institute of Management & Research & Institute of Management & Research.',
+    'OUR PURPOSE. OUR FUTURE. Learn about ESSENCE, an entrepreneurial competition by Chetana’s R. K. Institute of Management & Research, Institute of Management & Research and Chetana H.S College.',
 };
 
 export default function AboutPage() {
@@ -156,7 +156,7 @@ export default function AboutPage() {
               <span className="text-xs font-bold uppercase tracking-wider">Host Institutions &amp; Venue</span>
             </div>
             <h3 className="font-serif text-2xl font-medium text-[#F7F4EC]">
-              Chetana’s R. K. Institute of Management &amp; Research &amp; Institute of Management &amp; Research
+              Chetana’s R. K. Institute of Management &amp; Research, Institute of Management &amp; Research and Chetana H.S College
             </h3>
             <p className="text-xs sm:text-sm text-[#C4CFDD] leading-relaxed">
               Main event will take place on <strong>21–22 December at 10:00 AM</strong> in{' '}

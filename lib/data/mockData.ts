@@ -148,7 +148,7 @@ export const mockAnnouncements: Announcement[] = [
     id: 'ann-1',
     title: 'Registration Officially Open Across Maharashtra Colleges',
     summary: 'Assemble your team of 2–4 members and register before 26 November.',
-    body: 'Chetana’s R. K. Institute of Management & Research & Institute of Management & Research announce ESSENCE — From Ideas to Impact. Teams of 2–4 members can register before 26 November with a ₹500 per team fee to compete for the ₹1.5 Lakh Grand Fund Pool.',
+    body: 'Chetana’s R. K. Institute of Management & Research, Institute of Management & Research and Chetana H.S College announce ESSENCE — From Ideas to Impact. Teams of 2–4 members can register before 26 November with a ₹500 per team fee to compete for the ₹1.5 Lakh Grand Fund Pool.',
     category: 'general',
     audience: 'all',
     publishedAt: '2026-10-20T09:00:00Z',
