@@ -79,6 +79,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${inter.variable} ${playfair.variable} ${cormorant.variable} scroll-smooth`}
     >
       <body className="min-h-screen flex flex-col bg-[#041126] text-[#F7F4EC] antialiased selection:bg-[#D4AF5A]/30 selection:text-[#F0D99A]">

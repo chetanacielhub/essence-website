@@ -3,11 +3,7 @@ import { InnovationTrack, SuggestedTrack, ProgrammeTimelineEvent, PrizeCategory,
 export const siteConfig = {
   name: "ESSENCE",
   fullName: "ESSENCE · From Ideas to Impact",
-<<<<<<< HEAD
   presenter: "Chetana’s R. K. Institute of Management & Research, Institute of Management & Research and Chetana H.S College",
-=======
-  presenter: "Chetana’s R. K. Institute of Management & Research , Institute of Management & Research and Chetana's H.S College",
->>>>>>> b675ee13e01ce3898dbcd0a6f158cc891f0dfbab
   shortPresenter: "Chetana's CiEL",
   tagline: "From Ideas to Impact",
   supportingLine: "An entrepreneurial competition where innovative ideas compete to become impactful ventures.",
@@ -17,11 +13,7 @@ export const siteConfig = {
   grandFundPool: "₹1.5 Lakh",
   grandFundPoolAmount: 150000,
   institution: {
-<<<<<<< HEAD
     name: "Chetana's R. K. Institute of Management & Research, Institute of Management & Research and Chetana H.S College",
-=======
-    name: "Chetana's R. K. Institute of Management & Research , Institute of Management & Research and Chetana's H.S Collage ",
->>>>>>> b675ee13e01ce3898dbcd0a6f158cc891f0dfbab
     centre: "Centre for Innovation & Entrepreneurship Learning (CiEL)",
     campus: "Chetana's Campus, Survey No. 341, Govt. Colony, Bandra (East), Mumbai - 400051, Maharashtra, India",
     auditorium: "Chetana’s Auditorium",
