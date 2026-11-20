@@ -79,27 +79,23 @@ export default function Navbar() {
 
           {/* Right-Side Action CTAs */}
           <div className="hidden md:flex items-center space-x-3 relative z-10">
-            <a
-              href="https://forms.gle/yc2N7X9JAfCUsGeB6"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/register"
               className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-md text-[#041126] bg-gradient-to-r from-[#F0D99A] via-[#D4AF5A] to-[#B8923F] hover:opacity-95 shadow-md shadow-[#D4AF5A]/15 transition-all transform hover:-translate-y-0.5 cursor-pointer relative z-10"
             >
               <Sparkles className="w-3.5 h-3.5" />
               <span>Register Now</span>
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
-            <a
-              href="https://forms.gle/yc2N7X9JAfCUsGeB6"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/register"
               className="px-3 py-1.5 text-xs font-semibold rounded text-[#041126] bg-[#D4AF5A]"
             >
               Register
-            </a>
+            </Link>
             <button
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? 'Close Menu' : 'Open Navigation Menu'}
@@ -122,6 +118,7 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  onClick={() => setIsOpen(false)}
                   className={`px-3 py-2.5 text-xs font-medium rounded-md ${
                     isActive
                       ? 'text-[#F0D99A] bg-[#102D5C]/50 font-semibold border-l-2 border-[#D4AF5A]'
@@ -135,15 +132,14 @@ export default function Navbar() {
           </div>
 
           <div className="pt-2 flex flex-col gap-2">
-            <a
-              href="https://forms.gle/yc2N7X9JAfCUsGeB6"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/register"
+              onClick={() => setIsOpen(false)}
               className="text-center py-2.5 text-xs font-bold text-[#041126] bg-gradient-to-r from-[#F0D99A] via-[#D4AF5A] to-[#B8923F] rounded-md shadow flex items-center justify-center gap-1.5"
             >
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Register for ESSENCE (Google Form)</span>
-            </a>
+              <span>Register for ESSENCE</span>
+            </Link>
           </div>
         </div>
       )}

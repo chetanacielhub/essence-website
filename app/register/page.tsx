@@ -17,10 +17,25 @@ import {
   Mail,
   ArrowRight,
   Compass,
+  Download,
+  Presentation,
 } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 
 const GOOGLE_FORM_URL = 'https://forms.gle/yc2N7X9JAfCUsGeB6';
+const PPT_TEMPLATE_PATH = '/ESSENCE-Pitch-Deck-Template.pptx';
+
+const PPT_SLIDES = [
+  { number: '01', title: 'Title', detail: 'Venture / Project Name, Tagline & Team Identity' },
+  { number: '02', title: 'Problem Statement', detail: 'Core pain point, affected users & current gap' },
+  { number: '03', title: 'Proposed Solution', detail: 'Your innovation, value proposition & how it works' },
+  { number: '04', title: 'Competitive Analysis', detail: 'Existing alternatives & your unfair advantage' },
+  { number: '05', title: 'Target Market', detail: 'Customer segments, TAM / SAM / SOM & demand' },
+  { number: '06', title: 'Unit Economics', detail: 'Cost structure, pricing, margins & revenue model' },
+  { number: '07', title: 'Go To Market Strategy', detail: 'Customer acquisition channels & launch roadmap' },
+  { number: '08', title: 'Financial Projection', detail: 'Key milestones, projected revenue & fund utilization' },
+  { number: '09', title: 'Team Composition', detail: 'Founding members, roles & complementary skills' },
+];
 
 export default function RegisterPage() {
   const handleDirectRedirect = () => {
@@ -134,6 +149,63 @@ export default function RegisterPage() {
             >
               {GOOGLE_FORM_URL}
             </a>
+          </div>
+        </div>
+
+        {/* Official Pitch Deck (PPT) Template Download & Slide Structure */}
+        <div className="royal-card p-6 sm:p-8 rounded-2xl border-[#D4AF5A]/35 bg-gradient-to-br from-[#0A1E3D] via-[#071A36] to-[#041126] shadow-xl space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-[#18335D]">
+            <div className="flex items-start gap-3.5">
+              <div className="w-12 h-12 rounded-xl bg-[#102D5C] border border-[#D4AF5A]/40 flex items-center justify-center text-[#D4AF5A] shrink-0">
+                <Presentation className="w-6 h-6" />
+              </div>
+              <div className="space-y-1">
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#D4AF5A] block">
+                  Official Presentation Format · 9 Slides
+                </span>
+                <h2 className="font-serif text-xl sm:text-2xl font-medium text-[#F7F4EC]">
+                  ESSENCE Pitch Deck PPT Template
+                </h2>
+                <p className="text-xs text-[#C4CFDD] leading-relaxed">
+                  Download the official PowerPoint template to prepare your venture presentation before submitting your registration form.
+                </p>
+              </div>
+            </div>
+
+            <a
+              href={PPT_TEMPLATE_PATH}
+              download="ESSENCE-Pitch-Deck-Template.pptx"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-xs sm:text-sm font-bold text-[#041126] bg-gradient-to-r from-[#F0D99A] via-[#D4AF5A] to-[#B8923F] hover:opacity-95 shadow-lg shadow-[#D4AF5A]/20 transition-all transform hover:-translate-y-0.5 shrink-0 cursor-pointer"
+            >
+              <Download className="w-4 h-4" />
+              <span>Download PPT Template (.pptx)</span>
+            </a>
+          </div>
+
+          <div className="space-y-3">
+            <div className="text-xs font-semibold uppercase tracking-wider text-[#F0D99A]">
+              Included Slide Structure (9 Slides)
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {PPT_SLIDES.map((slide) => (
+                <div
+                  key={slide.number}
+                  className="p-3.5 rounded-xl bg-[#041126]/70 border border-[#18335D] hover:border-[#D4AF5A]/40 transition-colors flex items-start gap-3"
+                >
+                  <span className="text-xs font-mono font-bold text-[#D4AF5A] bg-[#102D5C]/80 border border-[#D4AF5A]/30 px-2 py-1 rounded-md shrink-0">
+                    {slide.number}
+                  </span>
+                  <div className="space-y-0.5">
+                    <div className="text-xs sm:text-sm font-semibold text-[#F7F4EC]">
+                      {slide.title}
+                    </div>
+                    <p className="text-[11px] text-[#A0AEC0] leading-snug">
+                      {slide.detail}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
