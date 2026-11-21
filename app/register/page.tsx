@@ -209,6 +209,32 @@ export default function RegisterPage() {
           </div>
         </div>
 
+        {/* Registration Process Video Guide */}
+        <div className="royal-card p-6 sm:p-8 rounded-2xl border-[#D4AF5A]/35 bg-gradient-to-br from-[#0A1E3D] via-[#071A36] to-[#041126] shadow-xl space-y-4">
+          <div className="space-y-1">
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#D4AF5A] block">
+              Video Guide · Step-by-Step Walkthrough
+            </span>
+            <h2 className="font-serif text-xl sm:text-2xl font-medium text-[#F7F4EC]">
+              ESSENCE 2026 | Registration Process | Step-by-Step Guide
+            </h2>
+          </div>
+
+          <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-[#18335D] bg-[#041126] shadow-lg">
+            <iframe
+              className="w-full h-full"
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/NVBeyFDVRXM?si=RUpEhvDF2ekYAtL3&start=26"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+        </div>
+
         {/* Pre-Submission Checklist */}
         <div className="royal-card p-6 sm:p-8 rounded-2xl border-[#18335D] space-y-6">
           <div className="flex items-center gap-2 pb-3 border-b border-[#18335D]">
